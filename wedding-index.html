@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margot &amp; Henry — The Fourth of October</title>
+<meta name="description" content="Join us as we celebrate the marriage of Margot and Henry on the Fourth of October, Two Thousand Twenty-Six at Thistlewood Garden Conservatory.">
+<meta property="og:title" content="Margot & Henry are getting married">
+<meta property="og:description" content="The Fourth of October, Two Thousand Twenty-Six · Thistlewood Garden Conservatory">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%238A9A7E'/%3E%3Ctext x='16' y='21' font-size='14' text-anchor='middle' fill='%23F5F1E7' font-family='Georgia,serif'%3EMH%3C/text%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Mrs+Saint+Delafield&display=swap');
+
+:root{
+  --linen:#F5F1E7;
+  --linen-deep:#ECE4D0;
+  --card:#FBF8F0;
+  --ink:#33392F;
+  --ink-soft:#5E6656;
+  --sage:#8A9A7E;
+  --sage-deep:#5F7052;
+  --sage-pale:#C7D3BC;
+  --rose:#C8A79A;
+  --gold:#B69361;
+  --serif-display:'Cormorant', serif;
+  --serif-body:'EB Garamond', serif;
+  --script:'Mrs Saint Delafield', cursive;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:76px;}
+body{
+  margin:0;
+  background:var(--linen);
+  color:var(--ink);
+  font-family:var(--serif-body);
+  font-size:18px;
+  line-height:1.65;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:2000;pointer-events:none;
+  opacity:.4;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.25  0 0 0 0 0.28  0 0 0 0 0.2  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
+
+.eyebrow{
+  font-family:var(--serif-display);
+  font-variant:small-caps;
+  letter-spacing:.24em;
+  font-size:14px;
+  color:var(--sage-deep);
+  text-align:center;
+}
+.ribbon-banner{
+  position:relative;
+  display:inline-block;
+  background:var(--sage);
+  color:var(--linen);
+  padding:9px 30px;
+  font-family:var(--serif-display);
+  font-variant:small-caps;
+  letter-spacing:.2em;
+  font-size:15px;
+  margin:0 auto 8px;
+}
+.ribbon-banner::before,.ribbon-banner::after{
+  content:"";
+  position:absolute;top:4px;
+  width:16px;height:16px;
+  background:var(--sage-deep);
+  transform:rotate(45deg);
+  z-index:-1;
+}
+.ribbon-banner::before{left:-8px;}
+.ribbon-banner::after{right:-8px;}
+.banner-wrap{text-align:center;margin-bottom:6px;}
+
+.section-title{
+  font-family:var(--serif-display);
+  font-weight:500;
+  font-size:clamp(32px,5vw,50px);
+  text-align:center;
+  margin:14px 0 6px;
+}
+.section-sub{
+  text-align:center;
+  font-style:italic;
+  color:var(--ink-soft);
+  margin:0 0 56px;
+  font-size:17px;
+}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+.bow{width:64px;height:34px;position:relative;margin:0 auto 18px;}
+.bow::before,.bow::after{content:"";position:absolute;top:0;width:30px;height:30px;background:var(--sage-deep);}
+.bow::before{left:0;border-radius:50% 50% 50% 4px;transform:rotate(45deg);}
+.bow::after{right:0;border-radius:50% 50% 4px 50%;transform:rotate(-45deg);}
+.bow .knot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;background:var(--gold);border-radius:2px;z-index:2;}
+
+/* ---------- NAV ---------- */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:900;
+  background:rgba(245,241,231,.7);
+  transition:background .3s ease, box-shadow .3s ease;
+}
+.site-nav.scrolled{background:rgba(245,241,231,.96);box-shadow:0 2px 14px rgba(51,57,47,.12);}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.nav-brand{
+  font-family:var(--script);
+  font-size:26px;
+  color:var(--sage-deep);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:30px;}
+.nav-link{
+  font-family:var(--serif-display);
+  font-variant:small-caps;
+  letter-spacing:.1em;
+  font-size:15px;
+  color:var(--ink);
+  text-decoration:none;
+  position:relative;
+  padding:4px 0;
+}
+.nav-link::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
+  background:var(--sage-deep);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s ease;
+}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1);}
+.nav-link.active{color:var(--sage-deep);}
+.nav-toggle{
+  display:none;
+  flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;
+  background:none;border:none;cursor:pointer;
+  padding:0;
+}
+.nav-toggle span{display:block;width:100%;height:1.5px;background:var(--ink);transition:transform .3s ease, opacity .3s ease;}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+@media (max-width:700px){
+  .nav-links{
+    position:fixed;top:64px;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--linen);
+    box-shadow:0 12px 20px rgba(51,57,47,.12);
+    max-height:0;overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .nav-links.open{max-height:280px;}
+  .nav-link{padding:16px 32px;border-bottom:1px solid rgba(51,57,47,.08);}
+  .nav-toggle{display:flex;}
+}
+
+.guest-banner{
+  background:var(--sage-deep);
+  color:var(--linen);
+  text-align:center;
+  font-family:var(--serif-display);
+  font-style:italic;
+  font-size:15px;
+  padding:10px 20px;
+  margin-top:64px;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:92vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  position:relative;
+  padding:120px 24px 60px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:-10%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(138,154,126,.16), transparent 45%),
+    radial-gradient(circle at 82% 78%, rgba(182,147,97,.14), transparent 45%);
+  z-index:0;
+  will-change:transform;
+}
+.hero-content{position:relative;z-index:1;}
+.hero .eyebrow{margin-bottom:22px;}
+.couple-names{
+  font-family:var(--serif-display);
+  font-weight:600;
+  font-size:clamp(46px,9vw,92px);
+  margin:0;
+  line-height:1;
+}
+.couple-names .amp{font-style:italic;color:var(--sage-deep);font-weight:400;padding:0 10px;}
+.hero-sub{font-style:italic;color:var(--ink-soft);margin:20px 0 4px;font-size:19px;}
+.hero-date{font-family:var(--serif-display);font-size:16px;letter-spacing:.08em;color:var(--sage-deep);margin:16px 0 2px;}
+.hero-venue{font-size:16px;color:var(--ink-soft);margin:0 0 30px;}
+.hero-cta{
+  display:inline-block;
+  border:1px solid var(--sage-deep);
+  color:var(--sage-deep);
+  font-family:var(--serif-display);
+  font-variant:small-caps;
+  letter-spacing:.14em;
+  font-size:15px;
+  text-decoration:none;
+  padding:12px 30px;
+  transition:background .25s ease, color .25s ease;
+}
+.hero-cta:hover{background:var(--sage-deep);color:var(--linen);}
+.scroll-cue{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.15em;
+  font-size:13px;color:var(--ink-soft);
+  animation:bob 2.6s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+@media (prefers-reduced-motion:reduce){.scroll-cue{animation:none;}}
+
+/* ---------- STORY ---------- */
+.story{padding:100px 0;}
+.sprigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px;margin-top:10px;}
+.sprig-card{background:var(--card);border:1px solid var(--sage-pale);padding:30px 22px 24px;text-align:center;position:relative;}
+.sprig-card svg{width:46px;height:46px;margin-bottom:10px;}
+.sprig-card time{display:block;font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.12em;font-size:13px;color:var(--gold);margin-bottom:6px;}
+.sprig-card h3{font-family:var(--serif-display);font-weight:500;font-size:24px;margin:0 0 10px;color:var(--sage-deep);}
+.sprig-card p{margin:0;font-size:15.5px;color:var(--ink-soft);}
+
+/* ---------- DETAILS ---------- */
+.details{background:var(--linen-deep);padding:100px 0;}
+.occasion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin-top:10px;}
+.occasion-card{background:var(--card);padding:36px 30px;text-align:center;position:relative;border:1px solid rgba(51,57,47,.15);}
+.occasion-card::before,.occasion-card::after{content:"";position:absolute;width:60px;height:14px;background:var(--sage);}
+.occasion-card::before{top:-7px;left:24px;transform:rotate(-8deg);}
+.occasion-card::after{bottom:-7px;right:24px;transform:rotate(-8deg);}
+.occasion-card h3{font-family:var(--serif-display);font-size:28px;font-weight:500;margin:8px 0 12px;color:var(--ink);}
+.occasion-card p{margin:0 0 18px;color:var(--ink-soft);font-size:16px;}
+.occasion-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.occasion-links a{
+  font-family:var(--serif-display);
+  font-variant:small-caps;
+  letter-spacing:.08em;
+  font-size:13.5px;
+  color:var(--sage-deep);
+  text-decoration:none;
+  border:1px solid var(--sage-deep);
+  padding:8px 16px;
+  transition:background .2s ease, color .2s ease;
+}
+.occasion-links a:hover{background:var(--sage-deep);color:var(--linen);}
+
+/* ---------- GALLERY ---------- */
+.gallery{padding:100px 0;}
+.bloom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-top:10px;}
+.bloom{background:var(--card);padding:12px 12px 30px;border:1px solid var(--sage-pale);text-align:center;position:relative;}
+.bloom-frame{aspect-ratio:4/5;background:linear-gradient(150deg,#DCE4D2,#AFC0A0);display:flex;align-items:center;justify-content:center;color:var(--linen);font-family:var(--serif-display);font-variant:small-caps;font-size:13px;letter-spacing:.08em;}
+.bloom-caption{font-family:var(--script);font-size:20px;color:var(--sage-deep);margin-top:10px;}
+.bloom .corner-ribbon{position:absolute;top:-6px;left:-6px;width:34px;height:34px;background:var(--gold);clip-path:polygon(0 0,100% 0,0 100%);}
+
+/* ---------- RSVP ---------- */
+.rsvp{padding:110px 0 120px;background:var(--sage-pale);}
+.rsvp .eyebrow{color:var(--sage-deep);}
+.rsvp-card{max-width:520px;margin:0 auto;background:var(--card);padding:44px 38px 36px;position:relative;border:1px solid rgba(51,57,47,.15);box-shadow:0 16px 34px rgba(51,57,47,.2);}
+.rsvp-card .bow{cursor:pointer;margin-top:-70px;margin-bottom:14px;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+.rsvp-card .bow.untied{transform:scale(.7) rotate(8deg);opacity:.35;}
+.rsvp-form{transition:opacity .6s ease, filter .6s ease;}
+.rsvp-form.locked{opacity:.45;filter:blur(1.5px);pointer-events:none;}
+.rsvp-hint{text-align:center;font-family:var(--serif-display);font-style:italic;color:var(--ink-soft);font-size:14px;margin:-6px 0 22px;}
+.field{margin-bottom:20px;}
+.field label{display:block;font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.08em;font-size:14px;margin-bottom:6px;color:var(--sage-deep);}
+.field input[type=text],.field input[type=number],.field textarea{width:100%;font-family:var(--serif-body);font-size:17px;background:transparent;border:none;border-bottom:1px solid rgba(51,57,47,.35);padding:8px 2px;color:var(--ink);}
+.field input:focus,.field textarea:focus{outline:none;border-bottom:1px solid var(--sage-deep);}
+.field textarea{resize:vertical;min-height:66px;}
+.toggle-row{display:flex;gap:12px;}
+.toggle-row label{flex:1;text-align:center;font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.05em;font-size:14px;border:1px solid var(--sage-deep);padding:11px 8px;cursor:pointer;transition:background .25s,color .25s;color:var(--sage-deep);}
+.toggle-row input{display:none;}
+.toggle-row input:checked + label{background:var(--sage-deep);color:var(--linen);}
+.send-btn{width:100%;margin-top:6px;padding:13px;font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.12em;font-size:15px;background:var(--sage-deep);color:var(--linen);border:none;cursor:pointer;transition:background .25s,transform .2s;}
+.send-btn:hover{background:#4a5940;}
+.send-btn:active{transform:scale(.98);}
+.send-btn[disabled]{opacity:.6;cursor:default;}
+.field-error{color:#8a3a3a;font-size:13px;margin-top:4px;display:none;}
+.field-error.show{display:block;}
+.confirm-msg{display:none;margin-top:16px;padding:14px;border:1px dashed var(--sage-deep);font-family:var(--serif-display);font-style:italic;text-align:center;color:var(--sage-deep);}
+.confirm-msg.show{display:block;}
+
+/* curtain reveal (RSVP) */
+.curtain-overlay{position:fixed;inset:0;z-index:1500;pointer-events:none;display:flex;opacity:0;transition:opacity .12s ease;}
+.curtain-overlay.show{opacity:1;}
+.curtain-rod{position:absolute;top:0;left:0;right:0;height:10px;background:var(--gold);box-shadow:0 2px 8px rgba(0,0,0,.35);z-index:2;}
+.curtain-panel{width:50%;height:100%;position:relative;background:repeating-linear-gradient(90deg, rgba(0,0,0,.1) 0 3px, transparent 3px 28px),linear-gradient(180deg, var(--sage) 0%, var(--sage-deep) 100%);box-shadow:inset 0 0 70px rgba(0,0,0,.35);}
+.curtain-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.3), transparent 14%, transparent 86%, rgba(0,0,0,.3));}
+.curtain-left{transform:translateX(0) scaleX(1);transform-origin:left center;}
+.curtain-right{transform:translateX(0) scaleX(1);transform-origin:right center;}
+@keyframes curtainOpenLeft{0%{transform:translateX(0) scaleX(1);}32%{transform:translateX(-8%) scaleX(1.06);}100%{transform:translateX(-100%) scaleX(1);}}
+@keyframes curtainOpenRight{0%{transform:translateX(0) scaleX(1);}32%{transform:translateX(8%) scaleX(1.06);}100%{transform:translateX(100%) scaleX(1);}}
+.curtain-overlay.open .curtain-left{animation:curtainOpenLeft 1.25s cubic-bezier(.65,0,.35,1) forwards;}
+.curtain-overlay.open .curtain-right{animation:curtainOpenRight 1.25s cubic-bezier(.65,0,.35,1) forwards;}
+
+.burst-flash{position:fixed;top:50%;left:50%;width:36px;height:36px;transform:translate(-50%,-50%) scale(.2);border-radius:50%;background:radial-gradient(circle, rgba(182,147,97,.95) 0%, rgba(138,154,126,.55) 35%, rgba(138,154,126,0) 70%);z-index:1600;pointer-events:none;opacity:0;}
+@keyframes burstPulse{0%{transform:translate(-50%,-50%) scale(.2);opacity:0;}22%{opacity:.95;}100%{transform:translate(-50%,-50%) scale(22);opacity:0;}}
+.burst-flash.active{animation:burstPulse 1.15s ease-out forwards;}
+
+.petal-field{position:fixed;inset:0;z-index:1550;pointer-events:none;overflow:hidden;}
+.petal{position:fixed;top:0;left:0;width:12px;height:12px;border-radius:50% 0 50% 50%;opacity:0;animation:petalFly var(--dur,1.1s) ease-out forwards;}
+@keyframes petalFly{0%{transform:translate(0,0) rotate(0deg) scale(.6);opacity:0;}12%{opacity:1;}100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(1);opacity:0;}}
+
+@media (prefers-reduced-motion:reduce){
+  .curtain-panel,.burst-flash,.petal{display:none;animation:none;}
+  .curtain-overlay{display:none;}
+}
+
+footer{text-align:center;padding:60px 24px 50px;background:var(--linen-deep);}
+.footer-names{font-family:var(--script);font-size:32px;color:var(--sage-deep);margin-bottom:14px;}
+.footer-nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.footer-nav a{font-family:var(--serif-display);font-variant:small-caps;letter-spacing:.08em;font-size:14px;color:var(--ink);text-decoration:none;}
+.footer-nav a:hover{color:var(--sage-deep);}
+footer p{color:var(--ink-soft);font-style:italic;margin:0;font-size:15px;}
+
+.to-top{
+  position:fixed;right:22px;bottom:22px;z-index:800;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--sage-deep);color:var(--linen);
+  border:none;cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  transition:opacity .3s ease, transform .3s ease;
+}
+.to-top.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner wrap">
+    <a class="nav-brand" href="#home">M &amp; H</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#story" class="nav-link">Our story</a>
+      <a href="#details" class="nav-link">Details</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#rsvp" class="nav-link">RSVP</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="guest-banner" id="guestBanner" style="display:none;">
+  <p>Welcome, <span id="guestName"></span> — we're so glad you're here.</p>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Together with their families</p>
+    <h1 class="couple-names">Margot <span class="amp">&amp;</span> Henry</h1>
+    <p class="hero-sub">request the pleasure of your company at their wedding</p>
+    <p class="hero-date">The Fourth of October, Two Thousand Twenty-Six</p>
+    <p class="hero-venue">Thistlewood Garden Conservatory</p>
+    <a href="#rsvp" class="hero-cta">Reply now</a>
+  </div>
+  <p class="scroll-cue">↓ Scroll to Explore ↓</p>
+</section>
+
+<section class="story wrap" id="story">
+  <div class="banner-wrap reveal"><span class="ribbon-banner">Our Story</span></div>
+  <h2 class="section-title reveal">Pressed Between Pages</h2>
+  <p class="section-sub reveal">a few small moments, kept safe like flowers in a book</p>
+  <div class="sprigs">
+    <div class="sprig-card reveal">
+      <svg viewBox="0 0 60 60" fill="none" stroke="#8A9A7E" stroke-width="2.2" stroke-linecap="round"><path d="M30 55 V15"/><path d="M30 32 C20 28 16 18 20 8"/><path d="M30 40 C40 36 44 26 40 16"/><circle cx="30" cy="10" r="4" fill="#C8A79A" stroke="none"/></svg>
+      <time>Spring 2019</time>
+      <h3>The Meeting</h3>
+      <p>A garden volunteer day, a borrowed pair of gloves, and a mutual inability to identify a single weed correctly.</p>
+    </div>
+    <div class="sprig-card reveal">
+      <svg viewBox="0 0 60 60" fill="none" stroke="#8A9A7E" stroke-width="2.2" stroke-linecap="round"><path d="M30 55 V15"/><path d="M30 30 C42 26 46 16 42 6"/><path d="M30 42 C18 38 14 28 18 18"/><circle cx="30" cy="10" r="4" fill="#B69361" stroke="none"/></svg>
+      <time>Autumn 2020</time>
+      <h3>The First Bouquet</h3>
+      <p>Henry showed up with wildflowers he'd clearly picked himself, roadside weeds included. Margot pressed one between the pages of a novel — it's still there.</p>
+    </div>
+    <div class="sprig-card reveal">
+      <svg viewBox="0 0 60 60" fill="none" stroke="#8A9A7E" stroke-width="2.2" stroke-linecap="round"><path d="M30 55 V15"/><path d="M30 34 C20 30 16 20 20 10"/><path d="M30 44 C40 40 44 30 40 20"/><circle cx="30" cy="10" r="4" fill="#C8A79A" stroke="none"/></svg>
+      <time>Winter 2025</time>
+      <h3>The Proposal</h3>
+      <p>In the same conservatory where they'll marry, among the winter blooms, Henry asked. The ring box had a small sprig of rosemary tucked beside it, for remembrance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="details" id="details">
+  <div class="wrap">
+    <div class="banner-wrap reveal"><span class="ribbon-banner">The Details</span></div>
+    <h2 class="section-title reveal">The Occasion</h2>
+    <p class="section-sub reveal">two moments, one afternoon, tied together with a bow</p>
+    <div class="occasion-grid">
+      <div class="occasion-card reveal">
+        <p class="eyebrow" style="font-size:12px;">Ceremony</p>
+        <h3>The Vows</h3>
+        <p>Half past three in the afternoon<br>Thistlewood Garden Conservatory<br>Glasshouse Court</p>
+        <div class="occasion-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Thistlewood%20Garden%20Conservatory%20Glasshouse%20Court" target="_blank" rel="noopener">Get directions</a>
+          <a href="#" id="addCalendar">Add to calendar</a>
+        </div>
+      </div>
+      <div class="occasion-card reveal">
+        <p class="eyebrow" style="font-size:12px;">Reception</p>
+        <h3>The Celebration</h3>
+        <p>Half past six in the evening<br>The Orangery Hall<br>Supper, dancing, and one very long toast</p>
+        <div class="occasion-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=The%20Orangery%20Hall%20Thistlewood%20Garden%20Conservatory" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery wrap" id="gallery">
+  <div class="banner-wrap reveal"><span class="ribbon-banner">Keepsakes</span></div>
+  <h2 class="section-title reveal">In Bloom</h2>
+  <p class="section-sub reveal">a few frames left open for your own photographs</p>
+  <div class="bloom-grid">
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">the garden day</p></div>
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">first bouquet</p></div>
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">the proposal</p></div>
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">engagement day</p></div>
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">the conservatory</p></div>
+    <div class="bloom reveal"><span class="corner-ribbon"></span><div class="bloom-frame">Your Photo</div><p class="bloom-caption">us, most days</p></div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+  <div class="wrap">
+    <div class="banner-wrap reveal"><span class="ribbon-banner">Kindly Reply</span></div>
+    <h2 class="section-title reveal">Untie the Bow to Reply</h2>
+    <p class="section-sub reveal">please respond by the first of September</p>
+    <div class="rsvp-card reveal">
+      <div class="bow" id="rsvpBow" role="button" tabindex="0" aria-label="Untie the ribbon to open the reply form"><span class="knot"></span></div>
+      <p class="rsvp-hint" id="rsvpHint">tap the ribbon to open your reply card</p>
+      <form class="rsvp-form locked" id="rsvpForm" novalidate>
+        <div class="field">
+          <label for="name">Full Name(s)</label>
+          <input type="text" id="name" name="name" placeholder="Jane &amp; John Doe" required>
+          <p class="field-error" id="nameError">Enter your name so we know who's replying.</p>
+        </div>
+        <div class="field">
+          <label>Will You Attend</label>
+          <div class="toggle-row">
+            <input type="radio" id="yes" name="attending" value="yes" checked>
+            <label for="yes">Joyfully Accept</label>
+            <input type="radio" id="no" name="attending" value="no">
+            <label for="no">Regretfully Decline</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="guests">Number in Party</label>
+          <input type="number" id="guests" name="guests" min="1" max="6" value="1">
+        </div>
+        <div class="field">
+          <label for="message">A Note for the Couple</label>
+          <textarea id="message" name="message" placeholder="Wishing you both a lifetime of wildflowers."></textarea>
+        </div>
+        <button type="submit" class="send-btn">Send Reply</button>
+        <div class="confirm-msg" id="confirmMsg">With gratitude — your reply has been kept safe, pressed between these pages.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="curtain-overlay" id="curtainOverlay" aria-hidden="true">
+  <div class="curtain-rod"></div>
+  <div class="curtain-panel curtain-left"></div>
+  <div class="curtain-panel curtain-right"></div>
+</div>
+<div class="burst-flash" id="burstFlash" aria-hidden="true"></div>
+<div class="petal-field" id="petalField" aria-hidden="true"></div>
+
+<footer>
+  <div class="footer-names">Margot &amp; Henry</div>
+  <nav class="footer-nav">
+    <a href="#home">Home</a><a href="#story">Our story</a><a href="#details">Details</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a>
+  </nav>
+  <p>we cannot wait to celebrate with you</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* guest personalization */
+const params = new URLSearchParams(window.location.search);
+const guest = params.get('to');
+if(guest){
+  document.getElementById('guestName').textContent = guest;
+  document.getElementById('guestBanner').style.display = 'block';
+}
+
+/* nav scroll state + mobile toggle */
+const siteNav = document.getElementById('siteNav');
+const navLinks = document.getElementById('navLinks');
+const navToggle = document.getElementById('navToggle');
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  siteNav.classList.toggle('scrolled', y > 30);
+  toTop.classList.toggle('show', y > 700);
+  if(!reducedMotion){
+    document.getElementById('heroBg').style.transform = 'translateY(' + (y*0.12) + 'px)';
+  }
+}, {passive:true});
+navToggle.addEventListener('click', ()=>{
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+}));
+toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior: reducedMotion ? 'auto' : 'smooth'}));
+
+/* scrollspy */
+const sections = ['story','details','gallery','rsvp'].map(id=>document.getElementById(id));
+const spyObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    const link = document.querySelector('.nav-link[href="#'+e.target.id+'"]');
+    if(!link) return;
+    if(e.isIntersecting) document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+    if(e.isIntersecting) link.classList.add('active');
+  });
+}, {rootMargin:'-45% 0px -50% 0px'});
+sections.forEach(s=> s && spyObserver.observe(s));
+
+/* scroll reveal */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+},{threshold:.15});
+revealEls.forEach(el=>io.observe(el));
+
+/* add to calendar */
+const icsLink = document.getElementById('addCalendar');
+icsLink.addEventListener('click', (e)=>{
+  e.preventDefault();
+  const ics = [
+    'BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
+    "SUMMARY:Margot & Henry's Wedding",
+    'DTSTART:20261004T153000','DTEND:20261004T220000',
+    'LOCATION:Thistlewood Garden Conservatory',
+    'DESCRIPTION:Ceremony at 3:30pm\\, reception to follow at 6:30pm.',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
+  a.download = 'margot-and-henry-wedding.ics';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+
+/* rsvp bow + curtain reveal */
+const bow = document.getElementById('rsvpBow');
+const form = document.getElementById('rsvpForm');
+const hint = document.getElementById('rsvpHint');
+const curtainOverlay = document.getElementById('curtainOverlay');
+const burstFlash = document.getElementById('burstFlash');
+const petalField = document.getElementById('petalField');
+const petalColors = ['var(--sage)','var(--sage-deep)','var(--rose)','var(--gold)','var(--sage-pale)'];
+
+function spawnPetals(x,y){
+  const count = 18;
+  for(let i=0;i<count;i++){
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const angle = Math.random()*Math.PI*2;
+    const dist = 260 + Math.random()*420;
+    const dx = Math.cos(angle)*dist;
+    const dy = Math.sin(angle)*dist - 60;
+    p.style.left = x+'px';
+    p.style.top = y+'px';
+    p.style.background = petalColors[i % petalColors.length];
+    p.style.setProperty('--dx', dx+'px');
+    p.style.setProperty('--dy', dy+'px');
+    p.style.setProperty('--rot', (Math.random()*540-270)+'deg');
+    p.style.setProperty('--dur', (0.9+Math.random()*0.6)+'s');
+    petalField.appendChild(p);
+    p.addEventListener('animationend', ()=> p.remove());
+  }
+}
+
+let untied = false;
+function untie(){
+  if(untied) return;
+  untied = true;
+  const rect = bow.getBoundingClientRect();
+  const x = rect.left + rect.width/2, y = rect.top + rect.height/2;
+  bow.classList.add('untied');
+  curtainOverlay.classList.add('show');
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=> curtainOverlay.classList.add('open')); });
+  burstFlash.style.left = x+'px'; burstFlash.style.top = y+'px';
+  burstFlash.classList.add('active');
+  if(!reducedMotion) spawnPetals(x,y);
+  hint.style.display='none';
+  setTimeout(()=> form.classList.remove('locked'), 600);
+}
+bow.addEventListener('click', untie);
+bow.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' ') untie(); });
+
+/* rsvp validation + submit */
+const nameField = document.getElementById('name');
+const nameError = document.getElementById('nameError');
+const confirmMsg = document.getElementById('confirmMsg');
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  if(!nameField.value.trim()){
+    nameError.classList.add('show');
+    nameField.focus();
+    return;
+  }
+  nameError.classList.remove('show');
+  confirmMsg.classList.add('show');
+  form.querySelector('.send-btn').textContent = 'Reply Sent';
+  form.querySelector('.send-btn').disabled = true;
+});
+nameField.addEventListener('input', ()=> nameError.classList.remove('show'));
+</script>
+
+</body>
+</html>
