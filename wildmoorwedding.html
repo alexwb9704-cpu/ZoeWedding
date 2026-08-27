@@ -1,0 +1,2142 @@
+<title>Wildmoor Farm Invitation</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap">
+
+<style>
+/* ============================================================
+   WILDMOOR — a stationery suite for the web
+   Single committed visual world: letterpress on parchment.
+   No theme inversion; every colour painted explicitly.
+   ============================================================ */
+
+:root{
+  /* grounds — warm neutrals biased toward the sage/gold accents */
+  --parchment:#F1ECE1;
+  --parchment-deep:#E5DED0;
+  --bone:#FAF7F0;
+  --bone-edge:#EFE8DA;
+
+  /* ink */
+  --ink:#24211C;
+  --ink-soft:#4A443B;
+  --ink-faint:#847A6B;
+
+  /* accents */
+  --sage:#7C8B72;
+  --sage-deep:#48543F;
+  --sage-pale:#C3CBB8;
+  --taupe:#A99B88;
+  --gold:#B08D57;
+  --gold-pale:#DCC79C;
+  --blush:#D8C4BA;
+
+  --rule:rgba(36,33,28,.16);
+  --rule-gold:rgba(176,141,87,.42);
+
+  /* type */
+  --display:"Cormorant Garamond",Cormorant,"Times New Roman",serif;
+  --body:"EB Garamond","Cormorant Garamond",Georgia,serif;
+  --script:"Great Vibes","Snell Roundhand",cursive;
+  --label:"Jost","Futura","Avenir Next",system-ui,sans-serif;
+
+  --measure:63ch;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.42,0,.28,1);
+
+  --deckle:polygon(0% 1.2%,4% 0.2%,9% 1.4%,15% .3%,22% 1.5%,29% .4%,36% 1.3%,44% .2%,52% 1.4%,60% .3%,68% 1.5%,76% .4%,84% 1.3%,92% .2%,97% 1.4%,100% .6%,99.2% 8%,100% 16%,98.8% 26%,100% 36%,99% 46%,100% 56%,98.9% 66%,100% 76%,99.1% 86%,100% 94%,99.4% 99.3%,93% 100%,86% 98.8%,79% 99.9%,71% 98.7%,63% 99.8%,55% 98.6%,47% 99.9%,39% 98.7%,31% 99.8%,23% 98.6%,15% 99.9%,8% 98.8%,2% 99.9%,0% 95%,1.1% 86%,0% 76%,1.2% 66%,0% 56%,1% 46%,0% 36%,1.2% 26%,0% 16%,.8% 8%);
+
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--parchment);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(16.5px,1.05vw + 14px,18.5px);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::after{ /* parchment tooth over everything */
+  content:"";position:fixed;inset:0;background-image:var(--grain);
+  background-size:180px 180px;opacity:.16;mix-blend-mode:multiply;
+  pointer-events:none;z-index:900;
+}
+
+img,svg,canvas{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;border-radius:1px}
+
+/* ---------- typographic primitives ---------- */
+.script{font-family:var(--script);font-weight:400;line-height:1.05;color:var(--ink)}
+.label{
+  font-family:var(--label);font-weight:300;
+  text-transform:uppercase;letter-spacing:.24em;
+  font-size:.66rem;color:var(--ink-faint);
+}
+.label--sage{color:var(--sage-deep)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:.01em}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.14}
+h3{font-size:clamp(1.3rem,2.4vw,1.6rem);line-height:1.22}
+p{margin:0}
+.caps{
+  font-family:var(--display);text-transform:uppercase;
+  letter-spacing:.3em;font-weight:500;
+}
+.lede{font-size:1.13em;color:var(--ink-soft);font-style:italic;font-weight:400}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* hairline rule with a gold thread through it */
+.rule{border:0;height:1px;background:var(--rule);margin:0}
+.rule-orn{display:flex;align-items:center;gap:.9rem;color:var(--gold)}
+.rule-orn::before,.rule-orn::after{content:"";flex:1;height:1px;background:var(--rule-gold)}
+.rule-orn svg{width:16px;height:16px;flex:none}
+
+/* ============================================================
+   1. THE CURTAIN — envelope reveal
+   ============================================================ */
+#curtain{
+  position:fixed;inset:0;z-index:800;
+  display:grid;place-items:center;
+  background:var(--parchment);
+  transition:opacity 900ms var(--ease-soft),visibility 900ms;
+}
+#curtain[hidden]{display:none}
+#curtain.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+
+#bloomCanvas{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transform:scale(1.08);
+  transition:transform 2400ms var(--ease-soft),filter 1400ms var(--ease-soft);
+}
+#curtain.is-open #bloomCanvas{transform:scale(1.14)}
+#curtain::before{ /* vignette + wash so type always reads */
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(115% 80% at 50% 40%,rgba(252,249,243,.34) 0%,rgba(244,238,227,.20) 42%,rgba(226,217,200,.44) 74%,rgba(196,185,166,.62) 100%);
+}
+
+.curtain-stage{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+  gap:clamp(1.4rem,4vh,2.6rem);
+  padding:clamp(1.5rem,5vw,3rem) 1.25rem;
+  width:100%;max-width:640px;
+  text-align:center;
+}
+
+.curtain-greeting{transition:opacity 800ms var(--ease-soft),transform 800ms var(--ease-soft)}
+#curtain.is-open .curtain-greeting{opacity:0;transform:translateY(-14px);pointer-events:none}
+.curtain-greeting .script{font-size:clamp(3.2rem,13vw,5.4rem);color:var(--ink)}
+.curtain-greeting .label{margin-top:.85rem;display:block}
+
+/* --- envelope --- */
+.envelope{
+  position:relative;width:min(380px,84vw);aspect-ratio:1.44/1;
+  perspective:1400px;
+  transition:transform 900ms var(--ease),opacity 700ms var(--ease-soft);
+}
+#curtain.is-open .envelope{transform:translateY(34px) scale(.9);opacity:0;pointer-events:none}
+.envelope-btn{
+  display:block;width:100%;height:100%;position:relative;
+  border-radius:3px;
+}
+.envelope-btn:hover .env-flap,.envelope-btn:focus-visible .env-flap{transform:rotateX(-13deg)}
+.env-layer{position:absolute;inset:0;width:100%;height:100%}
+.env-back{filter:drop-shadow(0 18px 26px rgba(72,62,45,.22))}
+.env-flap{
+  z-index:4;transform-origin:top center;transform-style:preserve-3d;
+  transition:transform 850ms var(--ease-soft);
+  will-change:transform;
+}
+.is-opening .env-flap{transform:rotateX(-179deg)}
+.env-front{z-index:5;pointer-events:none}
+.env-card{
+  position:absolute;left:8%;right:8%;top:14%;bottom:12%;
+  z-index:3;
+  background:linear-gradient(#FBF8F2,#F3ECDE);
+  box-shadow:0 2px 10px rgba(72,62,45,.16);
+  transition:transform 1100ms var(--ease-soft),opacity 500ms;
+  display:grid;place-items:center;
+}
+.is-opening .env-card{transform:translateY(-16%)}
+
+.envelope-cue{
+  display:flex;flex-direction:column;align-items:center;gap:.55rem;
+  transition:opacity 500ms var(--ease-soft);
+}
+.is-opening .envelope-cue{opacity:0}
+.envelope-cue .label{color:var(--sage-deep)}
+.tap-dot{
+  width:5px;height:5px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 0 0 rgba(176,141,87,.55);
+  animation:pulse 2600ms var(--ease-soft) infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(176,141,87,.5)}
+  70%{box-shadow:0 0 0 13px rgba(176,141,87,0)}
+  100%{box-shadow:0 0 0 0 rgba(176,141,87,0)}
+}
+
+/* --- the hanging card --- */
+.hanger{
+  position:absolute;left:50%;top:0;z-index:3;
+  width:min(330px,80vw,40vh);
+  transform:translate(-50%,-100%);
+  opacity:0;pointer-events:none;
+  transform-origin:50% 0;
+}
+.hanger.is-shown{
+  animation:drop 1400ms var(--ease-soft) forwards;
+  pointer-events:auto;
+}
+@keyframes drop{
+  0%{opacity:0;transform:translate(-50%,-94%) rotate(-1.4deg)}
+  60%{opacity:1}
+  100%{opacity:1;transform:translate(-50%,1.2%) rotate(0deg)}
+}
+.hanger.is-shown .hanger-swing{animation:sway 7s var(--ease-soft) 1500ms infinite alternate}
+.hanger-swing{transform-origin:50% 0}
+@keyframes sway{
+  from{transform:rotate(-1.1deg)}
+  to{transform:rotate(1.1deg)}
+}
+
+.ribbon{display:block;width:100%;height:auto;margin-bottom:-2px}
+
+.hangcard{
+  position:relative;
+  background:linear-gradient(168deg,#FCF9F3 0%,#F4EDDF 100%);
+  padding:clamp(1.6rem,5vw,2.2rem) clamp(1.2rem,4.5vw,1.8rem) clamp(2.6rem,7vw,3.2rem);
+  box-shadow:0 22px 40px -16px rgba(60,50,34,.42),0 2px 4px rgba(60,50,34,.14);
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:.75rem;
+  /* deckle / torn edge */
+  clip-path:var(--deckle);
+}
+.hangcard .script{font-size:clamp(2.3rem,9vw,3rem);color:var(--sage-deep)}
+.hangcard .names{
+  font-family:var(--display);text-transform:uppercase;
+  letter-spacing:.34em;font-size:clamp(.78rem,2.9vw,.95rem);
+  color:var(--ink);font-weight:500;line-height:1.9;
+  padding-left:.34em;
+}
+.medallion{
+  width:clamp(92px,26vw,116px);aspect-ratio:.78/1;
+  border-radius:50% 50% 50% 50%/45% 45% 55% 55%;
+  overflow:hidden;
+  box-shadow:0 0 0 1px rgba(176,141,87,.5),0 0 0 5px var(--bone),0 0 0 6px rgba(176,141,87,.28);
+  margin:.3rem 0;
+}
+.medallion canvas{width:100%;height:100%;object-fit:cover}
+.hangcard .meta{
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.6rem;color:var(--ink-soft);line-height:2.1;
+}
+.hangcard-wrap,.invite-wrap{position:relative;display:block}
+.seal{
+  position:absolute;bottom:-27px;left:50%;transform:translateX(-50%);z-index:3;
+  width:58px;height:58px;filter:drop-shadow(0 4px 7px rgba(52,44,30,.4));
+}
+.invite-wrap .seal{width:76px;height:76px;bottom:-34px}
+
+.enter-cue{
+  position:absolute;left:50%;bottom:clamp(1.2rem,5vh,2.6rem);
+  transform:translateX(-50%);z-index:6;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  opacity:0;transition:opacity 900ms var(--ease-soft) 400ms;
+  pointer-events:none;
+}
+.enter-cue.is-shown{opacity:1;pointer-events:auto}
+.enter-cue .arrow{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:fall 2600ms var(--ease-soft) infinite}
+@keyframes fall{0%{opacity:0;transform:translateY(-8px)}40%{opacity:1}100%{opacity:0;transform:translateY(8px)}}
+
+.skip,.gate-back{
+  background:rgba(250,247,240,.86);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  border:1px solid var(--rule-gold);
+  padding:.5rem 1rem;color:var(--ink-soft);
+  transition:background 300ms,color 300ms;
+}
+.skip:hover,.gate-back:hover{background:var(--bone);color:var(--ink)}
+.skip{
+  position:absolute;top:clamp(1rem,3vh,1.6rem);right:clamp(1rem,4vw,2rem);z-index:7;
+}
+
+/* ============================================================
+   2. SITE CHROME
+   ============================================================ */
+#site{opacity:0;transition:opacity 1000ms var(--ease-soft)}
+#site.is-live{opacity:1}
+
+.topbar{
+  position:sticky;top:0;z-index:400;
+  background:rgba(241,236,225,.93);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar-inner{
+  max-width:1180px;margin:0 auto;padding:.7rem clamp(1rem,4vw,2rem);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.monogram{
+  font-family:var(--display);letter-spacing:.22em;text-transform:uppercase;
+  font-size:.82rem;font-weight:500;padding-left:.22em;white-space:nowrap;
+}
+.monogram small{display:block;font-family:var(--label);font-weight:200;font-size:.54rem;letter-spacing:.26em;color:var(--ink-faint);margin-top:.15rem}
+.nav{display:none;gap:clamp(.9rem,2vw,1.7rem);align-items:center}
+@media(min-width:1000px){.nav{display:flex}.navtoggle{display:none}}
+.nav a{
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.17em;font-size:.63rem;color:var(--ink-soft);
+  text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;
+  transition:color 300ms,border-color 300ms;white-space:nowrap;
+}
+.nav a:hover,.nav a.is-here{color:var(--ink);border-color:var(--gold)}
+.nav a.pill{
+  border:1px solid var(--sage);color:var(--sage-deep);
+  padding:.42rem .95rem;border-radius:999px;
+}
+.nav a.pill:hover{background:var(--sage);color:var(--bone);border-color:var(--sage)}
+.navtoggle{display:flex;flex-direction:column;gap:4px;padding:.5rem}
+.navtoggle span{display:block;width:22px;height:1px;background:var(--ink);transition:transform 300ms,opacity 300ms}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.drawer{
+  display:grid;grid-template-rows:0fr;overflow:hidden;
+  transition:grid-template-rows 500ms var(--ease-soft);
+  border-top:1px solid transparent;
+}
+.drawer.is-open{grid-template-rows:1fr;border-top-color:var(--rule)}
+.drawer-in{min-height:0;display:flex;flex-direction:column}
+.drawer a{
+  padding:.85rem clamp(1rem,4vw,2rem);border-bottom:1px solid var(--rule);
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.18em;font-size:.68rem;text-decoration:none;color:var(--ink-soft);
+}
+@media(min-width:1000px){.drawer{display:none}}
+
+/* ---------- section shell: each is a piece of paper ---------- */
+.sheet{
+  max-width:1180px;margin:0 auto;
+  padding:clamp(3.4rem,9vw,6.4rem) clamp(1.15rem,4vw,2rem);
+}
+.sheet + .sheet{border-top:1px solid var(--rule)}
+.sheet--tint{background:linear-gradient(var(--parchment-deep),var(--parchment));max-width:none}
+.sheet--tint > .inner{max-width:1180px;margin:0 auto}
+
+.sec-head{
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  text-align:center;margin-bottom:clamp(2rem,5vw,3.2rem);
+}
+.sec-head .rule-orn{width:min(220px,60%)}
+.prose{max-width:var(--measure);margin-inline:auto;display:flex;flex-direction:column;gap:1.1rem}
+
+/* ---------- cards / paper ---------- */
+.paper{
+  background:var(--bone);
+  border:1px solid var(--bone-edge);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 10px 24px -18px rgba(60,50,34,.5);
+  padding:clamp(1.5rem,4vw,2.2rem);
+}
+.paper--gold{border-color:var(--rule-gold)}
+
+/* ---------- countdown ---------- */
+.countdown{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(.4rem,2vw,1.4rem);
+  max-width:620px;margin:0 auto;
+}
+.cd-cell{text-align:center;position:relative;padding:.4rem 0}
+.cd-cell + .cd-cell::before{
+  content:"";position:absolute;left:calc(-1 * clamp(.2rem,1vw,.7rem));top:22%;bottom:22%;
+  width:1px;background:var(--rule-gold);
+}
+.cd-num{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(2.1rem,8vw,3.4rem);line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--ink);
+}
+.cd-lab{margin-top:.5rem}
+
+/* ---------- story timeline ---------- */
+.timeline{display:flex;flex-direction:column;gap:clamp(2.4rem,6vw,4rem);position:relative}
+.timeline::before{
+  content:"";position:absolute;left:50%;top:2rem;bottom:2rem;width:1px;
+  background:linear-gradient(transparent,var(--rule-gold) 12%,var(--rule-gold) 88%,transparent);
+  display:none;
+}
+@media(min-width:860px){.timeline::before{display:block}}
+.beat{display:grid;gap:clamp(1rem,3vw,2rem);align-items:center}
+@media(min-width:860px){
+  .beat{grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+  .beat:nth-child(even) .beat-fig{order:2}
+}
+.beat-fig{position:relative}
+.beat-fig canvas{width:100%;aspect-ratio:4/3;object-fit:cover}
+.beat-fig .frame{padding:9px;background:var(--bone);border:1px solid var(--bone-edge);box-shadow:0 14px 30px -22px rgba(60,50,34,.7)}
+.beat-body{display:flex;flex-direction:column;gap:.7rem}
+.beat-when{font-family:var(--label);font-weight:300;letter-spacing:.24em;text-transform:uppercase;font-size:.62rem;color:var(--gold)}
+
+/* ---------- detail cards ---------- */
+.two-up{display:grid;gap:clamp(1.1rem,3vw,1.8rem)}
+@media(min-width:820px){.two-up{grid-template-columns:1fr 1fr}}
+.three-up{display:grid;gap:clamp(1.1rem,3vw,1.6rem)}
+@media(min-width:720px){.three-up{grid-template-columns:repeat(3,1fr)}}
+.dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.1rem;align-items:baseline;margin-top:1.1rem}
+.dl dt{font-family:var(--label);font-weight:300;text-transform:uppercase;letter-spacing:.18em;font-size:.58rem;color:var(--ink-faint);padding-top:.28em}
+.dl dd{margin:0;color:var(--ink)}
+
+.mapfig{border:1px solid var(--bone-edge);background:var(--bone)}
+.mapfig svg{width:100%;height:auto;display:block}
+
+/* ---------- party grid ---------- */
+.party{display:grid;gap:clamp(1.2rem,3vw,2rem);grid-template-columns:repeat(2,1fr)}
+@media(min-width:700px){.party{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.party{grid-template-columns:repeat(4,1fr)}}
+.person{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem}
+.person .portrait{
+  width:100%;aspect-ratio:.82/1;overflow:hidden;
+  border-radius:50% 50% 50% 50%/42% 42% 58% 58%;
+  box-shadow:0 0 0 1px rgba(176,141,87,.35),0 12px 26px -20px rgba(60,50,34,.8);
+}
+.person canvas{width:100%;height:100%;object-fit:cover}
+.person .nm{font-family:var(--display);font-size:1.06rem;letter-spacing:.02em;margin-top:.3rem}
+.person .rl{font-family:var(--label);font-weight:300;text-transform:uppercase;letter-spacing:.2em;font-size:.55rem;color:var(--sage-deep)}
+.person .bio{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+
+/* ---------- gallery ---------- */
+.gallery{columns:2;column-gap:clamp(.6rem,2vw,1rem)}
+@media(min-width:760px){.gallery{columns:3}}
+@media(min-width:1100px){.gallery{columns:4}}
+.gal-item{
+  break-inside:avoid;margin-bottom:clamp(.6rem,2vw,1rem);
+  padding:7px;background:var(--bone);border:1px solid var(--bone-edge);
+  width:100%;display:block;
+  transition:transform 500ms var(--ease),box-shadow 500ms var(--ease);
+}
+.gal-item:hover{transform:translateY(-3px);box-shadow:0 16px 30px -22px rgba(60,50,34,.85)}
+.gal-item canvas{width:100%;display:block}
+
+#lightbox{
+  position:fixed;inset:0;z-index:700;display:none;place-items:center;
+  background:rgba(28,25,20,.9);padding:clamp(1rem,5vw,3rem);
+}
+#lightbox.is-open{display:grid}
+#lightbox canvas{max-height:78vh;width:auto;max-width:100%;background:var(--bone);padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+#lightbox .lb-close{position:absolute;top:1.2rem;right:1.4rem;color:var(--bone);font-family:var(--label);letter-spacing:.2em;font-size:.7rem;text-transform:uppercase}
+#lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:var(--bone);font-size:2rem;padding:1rem;line-height:1;opacity:.7}
+#lightbox .lb-nav:hover{opacity:1}
+#lightbox .lb-prev{left:.2rem}#lightbox .lb-next{right:.2rem}
+
+/* ---------- registry ---------- */
+.reg-card{
+  display:flex;flex-direction:column;gap:.6rem;text-decoration:none;
+  transition:transform 400ms var(--ease),border-color 400ms;
+}
+.reg-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.reg-card .go{font-family:var(--label);font-weight:300;letter-spacing:.2em;text-transform:uppercase;font-size:.58rem;color:var(--sage-deep);margin-top:auto;padding-top:.7rem}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin-inline:auto;border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:1.15rem .3rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.4rem;
+  font-family:var(--display);font-size:1.12rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .plus{position:relative;width:13px;height:13px;flex:none}
+.faq summary .plus::before,.faq summary .plus::after{
+  content:"";position:absolute;background:var(--gold);transition:transform 400ms var(--ease-soft);
+}
+.faq summary .plus::before{left:0;right:0;top:6px;height:1px}
+.faq summary .plus::after{top:0;bottom:0;left:6px;width:1px}
+.faq details[open] summary .plus::after{transform:rotate(90deg)}
+.faq .ans{padding:0 .3rem 1.35rem;color:var(--ink-soft);max-width:60ch}
+
+/* ---------- forms ---------- */
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.05rem}
+.field > label,.legend{
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.19em;font-size:.58rem;color:var(--ink-faint);
+}
+input[type=text],input[type=email],select,textarea{
+  font-family:var(--body);font-size:1rem;color:var(--ink);
+  background:var(--bone);border:1px solid var(--rule);border-radius:0;
+  padding:.72rem .85rem;width:100%;
+  transition:border-color 300ms,box-shadow 300ms;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(124,139,114,.16);
+}
+textarea{resize:vertical;min-height:110px;line-height:1.6}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-faint) 50%),linear-gradient(135deg,var(--ink-faint) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.22em;font-size:.64rem;
+  padding:.92rem 1.9rem;border:1px solid var(--sage-deep);
+  background:var(--sage-deep);color:#F6F3EA;
+  transition:background 400ms var(--ease),color 400ms,transform 300ms;
+}
+.btn:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px)}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.btn--ghost{background:transparent;color:var(--sage-deep)}
+.btn--ghost:hover{background:var(--sage-deep);color:#F6F3EA}
+.btn--tiny{padding:.55rem 1.05rem;font-size:.56rem;letter-spacing:.18em}
+
+.choice-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.choice{
+  position:relative;flex:1 1 130px;
+}
+.choice input{position:absolute;opacity:0;width:0;height:0}
+.choice span{
+  display:block;text-align:center;padding:.75rem .8rem;cursor:pointer;
+  border:1px solid var(--rule);background:var(--bone);
+  font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.16em;font-size:.6rem;color:var(--ink-soft);
+  transition:all 300ms var(--ease);
+}
+.choice input:checked + span{border-color:var(--sage-deep);background:var(--sage-deep);color:#F6F3EA}
+.choice input:focus-visible + span{outline:2px solid var(--sage-deep);outline-offset:2px}
+
+.note{font-size:.86rem;color:var(--ink-faint);line-height:1.6}
+.err{color:#8C3B2E;font-size:.88rem}
+
+/* guest rows in RSVP */
+.guest-row{
+  display:grid;gap:.75rem;padding:1.1rem 0;border-top:1px solid var(--rule);
+}
+@media(min-width:640px){.guest-row{grid-template-columns:1fr 1fr;align-items:end}}
+.guest-row .who{font-family:var(--display);font-size:1.15rem}
+
+/* ---------- guestbook ---------- */
+.wishes{display:grid;gap:clamp(.9rem,2.5vw,1.4rem);margin-top:2rem}
+@media(min-width:760px){.wishes{grid-template-columns:1fr 1fr}}
+.wish{position:relative;padding:1.5rem 1.4rem 1.3rem}
+.wish .qm{position:absolute;top:.1rem;left:.7rem;font-family:var(--display);font-size:3rem;color:var(--gold-pale);line-height:1}
+.wish p{font-style:italic;color:var(--ink-soft);position:relative}
+.wish .from{margin-top:.9rem;font-family:var(--label);font-weight:300;text-transform:uppercase;letter-spacing:.2em;font-size:.56rem;color:var(--sage-deep)}
+
+/* ---------- footer ---------- */
+.foot{
+  border-top:1px solid var(--rule);text-align:center;
+  padding:clamp(2.6rem,7vw,4.2rem) 1.25rem;
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+}
+.foot .script{font-size:clamp(2.4rem,8vw,3.4rem);color:var(--sage-deep)}
+
+/* ============================================================
+   3. THE GATE — token-locked invitation
+   ============================================================ */
+#gate{
+  position:fixed;inset:0;z-index:600;display:none;
+  overflow-y:auto;background:var(--parchment);
+}
+#gate.is-open{display:block}
+#gateCanvas{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+#gate::before{
+  content:"";position:fixed;inset:0;
+  background:radial-gradient(115% 85% at 50% 38%,rgba(252,249,243,.52) 0%,rgba(243,237,226,.40) 45%,rgba(223,214,197,.72) 100%);
+}
+.gate-stage{
+  position:relative;z-index:2;min-height:100%;
+  display:grid;place-items:center;
+  padding:clamp(1.6rem,6vw,4rem) 1.15rem;
+}
+.gate-panel{width:100%;max-width:560px;text-align:center}
+
+.invite-card{
+  position:relative;
+  background:linear-gradient(170deg,#FDFBF6,#F3EBDB);
+  padding:clamp(2.4rem,7vw,3.6rem) clamp(1.4rem,5vw,3rem) clamp(3.4rem,8vw,4.4rem);
+  box-shadow:0 34px 64px -28px rgba(56,46,30,.55),0 2px 5px rgba(56,46,30,.13);
+  clip-path:var(--deckle,none);
+  display:flex;flex-direction:column;align-items:center;gap:1.15rem;
+  animation:riseIn 900ms var(--ease-soft) both;
+}
+@keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.invite-card::before{
+  content:"";position:absolute;inset:12px;border:1px solid var(--rule-gold);pointer-events:none;
+}
+.invite-card .household{
+  font-family:var(--script);font-size:clamp(2.2rem,8vw,3.1rem);color:var(--sage-deep);
+}
+.invite-card .formal{
+  font-family:var(--display);font-size:clamp(1.02rem,3.2vw,1.16rem);
+  line-height:2;color:var(--ink-soft);max-width:34ch;
+}
+.invite-card .bignames{
+  font-family:var(--display);text-transform:uppercase;font-weight:500;
+  letter-spacing:.26em;font-size:clamp(1.15rem,4.6vw,1.7rem);
+  line-height:1.7;padding-left:.26em;
+}
+.invite-card .amp{font-family:var(--script);text-transform:none;letter-spacing:0;font-size:1.5em;color:var(--gold);display:block;line-height:.9;margin:.1em 0}
+.invite-card .whenwhere{font-family:var(--display);letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;line-height:2.3;color:var(--ink)}
+.invite-card .personal{
+  font-style:italic;color:var(--ink-soft);font-size:.97rem;max-width:40ch;
+  padding-top:1rem;border-top:1px solid var(--rule-gold);
+}
+.invite-card .seat-line{font-family:var(--label);font-weight:300;text-transform:uppercase;letter-spacing:.2em;font-size:.58rem;color:var(--ink-faint)}
+
+.gate-back{
+  position:fixed;top:clamp(1rem,3vh,1.5rem);left:clamp(1rem,4vw,2rem);z-index:5;
+}
+
+.pin-form{display:flex;flex-direction:column;gap:.9rem;max-width:340px;margin:1.6rem auto 0}
+.pin-form input{text-align:center;letter-spacing:.14em;font-family:var(--label);font-weight:300}
+
+.spinner{width:26px;height:26px;border:1px solid var(--rule-gold);border-top-color:var(--gold);border-radius:50%;animation:spin 900ms linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- admin ---------- */
+.admin-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1.4rem}
+.admin-table th{
+  text-align:left;font-family:var(--label);font-weight:300;text-transform:uppercase;
+  letter-spacing:.16em;font-size:.55rem;color:var(--ink-faint);
+  padding:.6rem .7rem;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+.admin-table td{padding:.7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.admin-table td.lnk{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.74rem;color:var(--ink-soft);word-break:break-all}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.toast{
+  position:fixed;left:50%;bottom:1.6rem;transform:translate(-50%,calc(100% + 3.2rem));
+  z-index:950;background:var(--ink);color:#F6F3EA;
+  padding:.8rem 1.4rem;font-family:var(--label);font-weight:300;
+  text-transform:uppercase;letter-spacing:.18em;font-size:.6rem;
+  transition:transform 500ms var(--ease);
+  pointer-events:none;
+}
+.toast.is-up{transform:translate(-50%,0)}
+
+body.is-locked{overflow:hidden}
+
+/* ---------- scroll reveal ---------- */
+.rise{opacity:0;transform:translateY(20px);transition:opacity 900ms var(--ease-soft),transform 900ms var(--ease-soft)}
+.rise.is-in{opacity:1;transform:none}
+
+@media (max-height:760px){
+  .curtain-greeting .script{font-size:clamp(2.6rem,9vw,3.6rem)}
+  .hangcard{padding-top:1.2rem;padding-bottom:2.1rem;gap:.5rem}
+  .hangcard .script{font-size:clamp(1.9rem,7vw,2.3rem)}
+  .medallion{width:clamp(72px,20vw,88px)}
+  .enter-cue{bottom:.7rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .rise{opacity:1;transform:none}
+  .hanger.is-shown{opacity:1;transform:translate(-50%,-2%)}
+}
+</style>
+
+<!-- ============================================================
+     THE CURTAIN
+     ============================================================ -->
+<div id="curtain">
+  <canvas id="bloomCanvas" aria-hidden="true"></canvas>
+
+  <button class="skip label" id="skipBtn" type="button">Skip &amp; enter</button>
+
+  <div class="curtain-stage">
+    <div class="curtain-greeting">
+      <span class="script">You're Invited</span>
+      <span class="label">Join us in celebrating our wedding</span>
+    </div>
+
+    <div class="envelope" id="envelope">
+      <button class="envelope-btn" id="envelopeBtn" type="button" aria-label="Open the envelope">
+        <div class="env-layer env-back" id="envBack"></div>
+        <div class="env-card" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+            <circle cx="23" cy="23" r="21" fill="none" stroke="#DCC79C" stroke-width=".8"/>
+            <text x="23" y="29" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" letter-spacing="1" fill="#B08D57">M&amp;E</text>
+          </svg>
+        </div>
+        <div class="env-layer env-front" id="envFront"></div>
+        <div class="env-layer env-flap" id="envFlap"></div>
+      </button>
+    </div>
+
+    <div class="envelope-cue" id="envelopeCue">
+      <span class="tap-dot" aria-hidden="true"></span>
+      <span class="label">Open the envelope</span>
+    </div>
+  </div>
+
+  <!-- the hanging save-the-date -->
+  <div class="hanger" id="hanger" aria-hidden="true">
+    <div class="hanger-swing">
+      <svg class="ribbon" viewBox="0 0 300 128" aria-hidden="true">
+        <defs>
+          <linearGradient id="rib" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8E9C83"/>
+            <stop offset=".5" stop-color="#7C8B72"/>
+            <stop offset="1" stop-color="#66755C"/>
+          </linearGradient>
+        </defs>
+        <path d="M150 18 L100 128 L124 128 L153 40 Z" fill="url(#rib)"/>
+        <path d="M150 18 L200 128 L176 128 L147 40 Z" fill="url(#rib)" opacity=".9"/>
+        <path d="M150 20 C132 20 118 12 116 2 C130 4 144 10 150 20 Z" fill="#8E9C83"/>
+        <path d="M150 20 C168 20 182 12 184 2 C170 4 156 10 150 20 Z" fill="#6E7D64"/>
+        <ellipse cx="150" cy="19" rx="11" ry="7.5" fill="#7C8B72"/>
+        <ellipse cx="147" cy="17" rx="4" ry="2.4" fill="#9DAA92" opacity=".7"/>
+      </svg>
+
+      <div class="hangcard-wrap">
+      <div class="hangcard">
+        <span class="script">Save the Date</span>
+        <div class="medallion"><canvas id="medallionCanvas" width="240" height="308"></canvas></div>
+        <div class="names">Margot<br>&amp; Elias</div>
+        <div class="meta">
+          Saturday · June 12 · 2027<br>
+          Four thirty in the afternoon<br>
+          Wildmoor Farm · Rhinebeck, New York
+        </div>
+      </div>
+        <svg class="seal" viewBox="0 0 60 60" aria-hidden="true">
+          <defs>
+            <radialGradient id="waxg" cx=".36" cy=".3" r=".78">
+              <stop offset="0" stop-color="#6D7C63"/>
+              <stop offset=".62" stop-color="#4E5B45"/>
+              <stop offset="1" stop-color="#333D2C"/>
+            </radialGradient>
+          </defs>
+          <path d="M30 1.5 C40.5 1.2 49 7.4 53 16.6 C57 25.8 58.4 33 54.8 41.6 C51.2 50.2 43.6 57.2 33.4 58.4 C23.2 59.6 13.4 56 7.4 48.2 C1.4 40.4 .6 29.8 3.8 20 C7 10.2 19.5 1.8 30 1.5 Z" fill="url(#waxg)"/>
+          <path d="M30 5.4 C39 5.2 46.2 10.4 49.6 18.2 C53 26 54.2 32.1 51.1 39.4 C48 46.7 41.6 52.6 33 53.6 C24.4 54.6 16.1 51.6 11 45 C5.9 38.4 5.2 29.4 7.9 21.1 C10.6 12.8 21 5.6 30 5.4 Z" fill="none" stroke="#8F9C84" stroke-width=".7" opacity=".55"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="19" letter-spacing="1.5" fill="#C6CDBB" opacity=".92">ME</text>
+        </svg>
+      </div>
+
+      <svg class="ribbon" viewBox="0 0 300 150" aria-hidden="true" style="margin-top:-4px">
+        <path d="M128 0 L118 118 L104 150 L96 120 L110 0 Z" fill="#75846B" opacity=".92"/>
+        <path d="M172 0 L184 112 L198 148 L204 116 L190 0 Z" fill="#66755C" opacity=".85"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="enter-cue" id="enterCue">
+    <span class="label label--sage">Enter the celebration</span>
+    <span class="arrow" aria-hidden="true"></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     THE SITE
+     ============================================================ -->
+<div id="site" aria-hidden="true">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="monogram" style="text-decoration:none">
+        Margot &amp; Elias
+        <small>12 June 2027 · Rhinebeck NY</small>
+      </a>
+      <nav class="nav" id="navDesktop">
+        <a href="#story">Our Story</a>
+        <a href="#details">Details</a>
+        <a href="#travel">Travel</a>
+        <a href="#party">Wedding Party</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#registry">Registry</a>
+        <a href="#faq">FAQ</a>
+        <a href="#guestbook">Guestbook</a>
+        <a href="#rsvp" class="pill">RSVP</a>
+      </nav>
+      <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="drawer" id="drawer">
+      <div class="drawer-in">
+        <a href="#story">Our Story</a>
+        <a href="#details">Details</a>
+        <a href="#travel">Travel &amp; Stay</a>
+        <a href="#party">Wedding Party</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#registry">Registry</a>
+        <a href="#faq">FAQ</a>
+        <a href="#guestbook">Guestbook</a>
+        <a href="#rsvp">RSVP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ---------- welcome + countdown ---------- -->
+  <section class="sheet" id="top">
+    <div class="sec-head rise">
+      <span class="label">Wildmoor Farm · Rhinebeck, New York</span>
+      <h2 style="font-size:clamp(2.4rem,7vw,4rem);letter-spacing:.02em">
+        <span class="caps" style="font-size:.62em">Margot</span>
+        <span class="script" style="display:block;color:var(--gold);font-size:1.05em;margin:-.1em 0">and</span>
+        <span class="caps" style="font-size:.62em">Elias</span>
+      </h2>
+      <div class="rule-orn" style="width:min(260px,70%)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+      </div>
+      <p class="lede" style="max-width:46ch">Two families, one very long table, and a field that turns gold at seven in the evening. We would love for you to be there.</p>
+    </div>
+
+    <div class="countdown rise" id="countdown" role="timer" aria-live="off">
+      <div class="cd-cell"><div class="cd-num" id="cdD">—</div><div class="cd-lab label">Days</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cdH">—</div><div class="cd-lab label">Hours</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cdM">—</div><div class="cd-lab label">Minutes</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cdS">—</div><div class="cd-lab label">Seconds</div></div>
+    </div>
+
+    <div class="rise" style="text-align:center;margin-top:clamp(2rem,5vw,3rem);display:flex;flex-direction:column;align-items:center;gap:1rem">
+      <a href="#rsvp" class="btn">Respond by 1 April 2027</a>
+      <p class="note">Have a private invitation link? <button type="button" class="pinLink" style="border-bottom:1px solid var(--rule-gold)">Open your invitation</button></p>
+    </div>
+  </section>
+
+  <!-- ---------- our story ---------- -->
+  <section class="sheet sheet--tint" id="story">
+    <div class="inner">
+      <div class="sec-head rise">
+        <span class="label">Chapter one</span>
+        <h2>Our Story</h2>
+        <div class="rule-orn" style="width:min(200px,55%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ---------- details ---------- -->
+  <section class="sheet" id="details">
+    <div class="sec-head rise">
+      <span class="label">Saturday, the twelfth of June</span>
+      <h2>Event Details</h2>
+      <div class="rule-orn" style="width:min(200px,55%)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+      </div>
+    </div>
+
+    <div class="two-up rise">
+      <div class="paper paper--gold">
+        <span class="label label--sage">The Ceremony</span>
+        <h3 style="margin-top:.6rem">Under the sycamores</h3>
+        <dl class="dl">
+          <dt>Time</dt><dd class="tnum">4:30 pm — guests seated by 4:15</dd>
+          <dt>Place</dt><dd>The West Meadow, Wildmoor Farm</dd>
+          <dt>Address</dt><dd>118 Sawkill Road, Rhinebeck, NY 12572</dd>
+          <dt>Length</dt><dd>About thirty minutes, outdoors</dd>
+        </dl>
+        <p class="note" style="margin-top:1.1rem">The meadow is grass and packed earth. Block heels or flats will serve you far better than stilettos — we say this with love and from experience.</p>
+      </div>
+
+      <div class="paper paper--gold">
+        <span class="label label--sage">The Reception</span>
+        <h3 style="margin-top:.6rem">Dinner in the hay barn</h3>
+        <dl class="dl">
+          <dt>Cocktails</dt><dd class="tnum">5:15 pm on the orchard lawn</dd>
+          <dt>Dinner</dt><dd class="tnum">6:30 pm, seated, family style</dd>
+          <dt>Dancing</dt><dd class="tnum">8:00 pm until midnight</dd>
+          <dt>Last shuttle</dt><dd class="tnum">12:30 am to the village</dd>
+        </dl>
+        <p class="note" style="margin-top:1.1rem">One long table, forty feet of it, and no assigned speeches — though we will not stop anyone who insists.</p>
+      </div>
+    </div>
+
+    <div class="three-up rise" style="margin-top:clamp(1.1rem,3vw,1.8rem)">
+      <div class="paper">
+        <span class="label label--sage">Dress code</span>
+        <h3 style="margin-top:.5rem;font-size:1.2rem">Garden formal</h3>
+        <p class="note" style="margin-top:.6rem">Long dresses, linen suits, summer colours. Leave the black tie at home; leave the sunglasses on.</p>
+      </div>
+      <div class="paper">
+        <span class="label label--sage">Weather</span>
+        <h3 style="margin-top:.5rem;font-size:1.2rem">Warm, then cool</h3>
+        <p class="note" style="margin-top:.6rem">Mid-June in the Hudson Valley averages 78°F by day and drops to the high 50s after sunset. Bring a wrap for the dancing.</p>
+      </div>
+      <div class="paper">
+        <span class="label label--sage">Rain plan</span>
+        <h3 style="margin-top:.5rem;font-size:1.2rem">The barn, happily</h3>
+        <p class="note" style="margin-top:.6rem">If the sky turns, everything moves inside the hay barn. We will text every guest by noon that day.</p>
+      </div>
+    </div>
+
+    <figure class="mapfig rise" style="margin:clamp(1.6rem,4vw,2.4rem) 0 0;padding:10px">
+      <div id="mapHolder"></div>
+      <figcaption class="note" style="padding:.9rem .4rem 0;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center">
+        <span>Wildmoor Farm sits nine minutes east of Rhinebeck village, off Route 308.</span>
+        <a class="btn btn--ghost btn--tiny" href="https://www.google.com/maps/search/?api=1&amp;query=Rhinebeck+NY" target="_blank" rel="noopener">Open in maps</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ---------- travel ---------- -->
+  <section class="sheet sheet--tint" id="travel">
+    <div class="inner">
+      <div class="sec-head rise">
+        <span class="label">Getting there &amp; staying over</span>
+        <h2>Travel &amp; Accommodations</h2>
+        <div class="rule-orn" style="width:min(200px,55%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="three-up rise">
+        <div class="paper">
+          <span class="label label--sage">Room block · code MARGOTELIAS</span>
+          <h3 style="margin-top:.5rem;font-size:1.22rem">The Beekman Arms</h3>
+          <p class="note" style="margin-top:.55rem">6387 Mill Street, Rhinebeck · 9 min to the farm</p>
+          <p style="margin-top:.7rem;font-size:.95rem;color:var(--ink-soft)">America's oldest inn, and the shuttle's first stop. Held until 1 May 2027.</p>
+          <p class="tnum note" style="margin-top:.7rem">From $265 / night</p>
+        </div>
+        <div class="paper">
+          <span class="label label--sage">Room block · code VANDENBERG</span>
+          <h3 style="margin-top:.5rem;font-size:1.22rem">Mirbeau Inn &amp; Spa</h3>
+          <p class="note" style="margin-top:.55rem">46 Montgomery Street, Rhinebeck · 11 min</p>
+          <p style="margin-top:.7rem;font-size:.95rem;color:var(--ink-soft)">Quieter, with a spa for the morning after. Held until 1 May 2027.</p>
+          <p class="tnum note" style="margin-top:.7rem">From $340 / night</p>
+        </div>
+        <div class="paper">
+          <span class="label label--sage">No block — book direct</span>
+          <h3 style="margin-top:.5rem;font-size:1.22rem">Farmhouse rentals</h3>
+          <p class="note" style="margin-top:.55rem">Red Hook &amp; Milan · 12–20 min</p>
+          <p style="margin-top:.7rem;font-size:.95rem;color:var(--ink-soft)">Best value for families and groups of four or more. Book early — June is peak.</p>
+          <p class="tnum note" style="margin-top:.7rem">From $190 / night</p>
+        </div>
+      </div>
+
+      <div class="two-up rise" style="margin-top:clamp(1.1rem,3vw,1.8rem)">
+        <div class="paper">
+          <span class="label label--sage">Arriving</span>
+          <dl class="dl" style="margin-top:.8rem">
+            <dt>By air</dt><dd>Albany (ALB) 55 min · Newark (EWR) 2 hr 10 · JFK 2 hr 20</dd>
+            <dt>By rail</dt><dd>Amtrak to Rhinecliff–Kingston, then 12 min by taxi</dd>
+            <dt>By car</dt><dd>Taconic Parkway to Route 199, then 308 east</dd>
+          </dl>
+        </div>
+        <div class="paper">
+          <span class="label label--sage">Once you're here</span>
+          <dl class="dl" style="margin-top:.8rem">
+            <dt>Shuttle</dt><dd>Runs 3:30–4:00 pm from both inns; returns hourly from 9 pm, last at 12:30 am</dd>
+            <dt>Parking</dt><dd>Free in the lower field. Cars may be left overnight and collected before noon Sunday</dd>
+            <dt>Cabs</dt><dd>Rideshare is unreliable past 10 pm. Take the shuttle</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="paper rise" style="margin-top:clamp(1.1rem,3vw,1.8rem)">
+        <span class="label label--sage">While you're in town</span>
+        <div class="three-up" style="margin-top:1rem">
+          <p style="font-size:.95rem;color:var(--ink-soft)"><strong style="font-family:var(--display);font-size:1.08rem;font-weight:500">Oblong Books</strong><br>Two floors, excellent staff picks, open till six.</p>
+          <p style="font-size:.95rem;color:var(--ink-soft)"><strong style="font-family:var(--display);font-size:1.08rem;font-weight:500">Poets' Walk Park</strong><br>A slow river loop. Best an hour before sunset.</p>
+          <p style="font-size:.95rem;color:var(--ink-soft)"><strong style="font-family:var(--display);font-size:1.08rem;font-weight:500">Bread Alone</strong><br>Sunday morning. Get there before the pastry runs out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- wedding party ---------- -->
+  <section class="sheet" id="party">
+    <div class="sec-head rise">
+      <span class="label">The people standing with us</span>
+      <h2>Wedding Party</h2>
+      <div class="rule-orn" style="width:min(200px,55%)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+      </div>
+    </div>
+    <div class="party rise" id="partyGrid"></div>
+  </section>
+
+  <!-- ---------- gallery ---------- -->
+  <section class="sheet sheet--tint" id="gallery">
+    <div class="inner">
+      <div class="sec-head rise">
+        <span class="label">Eight years, abridged</span>
+        <h2>Gallery</h2>
+        <div class="rule-orn" style="width:min(200px,55%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="gallery rise" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ---------- registry ---------- -->
+  <section class="sheet" id="registry">
+    <div class="sec-head rise">
+      <span class="label">Only if you'd like to</span>
+      <h2>Registry</h2>
+      <div class="rule-orn" style="width:min(200px,55%)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+      </div>
+      <p class="lede" style="max-width:48ch">Your presence is the whole point. But several of you have asked, so: here is where we have put things.</p>
+    </div>
+
+    <div class="three-up rise">
+      <a class="paper reg-card" href="https://example.com/registry" target="_blank" rel="noopener">
+        <span class="label label--sage">Household</span>
+        <h3 style="font-size:1.22rem">Crate &amp; Barrel</h3>
+        <p class="note">Plates, linens, and the stockpot Elias has wanted since 2021.</p>
+        <span class="go">View registry →</span>
+      </a>
+      <a class="paper reg-card" href="https://example.com/registry" target="_blank" rel="noopener">
+        <span class="label label--sage">Kitchen &amp; table</span>
+        <h3 style="font-size:1.22rem">Food52</h3>
+        <p class="note">Serving pieces, a few good knives, and hand-thrown bowls.</p>
+        <span class="go">View registry →</span>
+      </a>
+      <a class="paper reg-card paper--gold" href="#rsvp">
+        <span class="label label--sage">Honeymoon fund</span>
+        <h3 style="font-size:1.22rem">Two weeks in Puglia</h3>
+        <p class="note">A contribution toward figs, a rented Fiat, and a very slow October.</p>
+        <span class="go">Contribute →</span>
+      </a>
+    </div>
+    <p class="note rise" style="text-align:center;margin-top:1.6rem">Gifts can also be brought on the day — there will be a table by the barn door.</p>
+  </section>
+
+  <!-- ---------- faq ---------- -->
+  <section class="sheet sheet--tint" id="faq">
+    <div class="inner">
+      <div class="sec-head rise">
+        <span class="label">Answers, in advance</span>
+        <h2>Questions</h2>
+        <div class="rule-orn" style="width:min(200px,55%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="faq rise" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- ---------- rsvp ---------- -->
+  <section class="sheet" id="rsvp">
+    <div class="sec-head rise">
+      <span class="label">Kindly reply by 1 April 2027</span>
+      <h2>RSVP</h2>
+      <div class="rule-orn" style="width:min(200px,55%)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+      </div>
+    </div>
+
+    <div class="paper rise" style="max-width:720px;margin-inline:auto" id="rsvpShell">
+      <!-- step 1: lookup -->
+      <div id="rsvpLookup">
+        <p class="lede" style="text-align:center;margin-bottom:1.4rem">Find your household to begin.</p>
+        <div class="field">
+          <label for="lookupName">Your full name, or the code from your invitation</label>
+          <input type="text" id="lookupName" autocomplete="name" placeholder="e.g. Beatrice Lang" spellcheck="false">
+        </div>
+        <div id="lookupErr" class="err" hidden></div>
+        <div style="display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:.4rem">
+          <button class="btn" id="lookupBtn" type="button">Find my invitation</button>
+          <button class="btn btn--ghost pinLink" type="button">I have a private link</button>
+        </div>
+        <p class="note" style="margin-top:1.2rem">Responding for more than one household? Submit the first, then look up the next.</p>
+      </div>
+
+      <!-- step 2: the form -->
+      <form id="rsvpForm" hidden novalidate>
+        <div style="text-align:center;margin-bottom:1.2rem">
+          <span class="label label--sage">Responding on behalf of</span>
+          <h3 id="rsvpHousehold" style="margin-top:.4rem">—</h3>
+          <p class="note" id="rsvpSeats"></p>
+        </div>
+        <div id="guestRows"></div>
+        <div class="field" style="margin-top:1.4rem">
+          <label for="rsvpEmail">Email for confirmations</label>
+          <input type="email" id="rsvpEmail" autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="rsvpNote">A note for Margot &amp; Elias <span style="text-transform:none;letter-spacing:0;font-style:italic">(optional)</span></label>
+          <textarea id="rsvpNote" placeholder="Song requests enthusiastically accepted."></textarea>
+        </div>
+        <div id="rsvpErr" class="err" hidden></div>
+        <div style="display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem">
+          <button class="btn" type="submit">Send our reply</button>
+          <button class="btn btn--ghost" type="button" id="rsvpBack">Start over</button>
+        </div>
+      </form>
+
+      <!-- step 3: done -->
+      <div id="rsvpDone" hidden style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <span class="script" style="font-size:clamp(2.4rem,8vw,3.2rem);color:var(--sage-deep)">Thank you</span>
+        <p id="rsvpDoneMsg" class="lede" style="max-width:42ch"></p>
+        <div class="rule-orn" style="width:min(180px,60%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg>
+        </div>
+        <p class="note" style="max-width:44ch">A confirmation is on its way. If anything changes, reply again from this page — the most recent response is the one that counts.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center">
+          <a class="btn btn--ghost btn--tiny" href="#guestbook">Leave a note in the guestbook</a>
+          <button class="btn btn--ghost btn--tiny" type="button" id="rsvpAnother">Reply for another household</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- guestbook ---------- -->
+  <section class="sheet sheet--tint" id="guestbook">
+    <div class="inner">
+      <div class="sec-head rise">
+        <span class="label">Well-wishes</span>
+        <h2>Guestbook</h2>
+        <div class="rule-orn" style="width:min(200px,55%)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+        </div>
+      </div>
+
+      <form class="paper rise" id="wishForm" style="max-width:620px;margin-inline:auto" novalidate>
+        <div class="field">
+          <label for="wishName">Your name</label>
+          <input type="text" id="wishName" autocomplete="name" placeholder="Winifred Amoah">
+        </div>
+        <div class="field">
+          <label for="wishText">Your message</label>
+          <textarea id="wishText" maxlength="360" placeholder="Advice, a memory, or a warning about the dancing."></textarea>
+        </div>
+        <div id="wishErr" class="err" hidden></div>
+        <button class="btn" type="submit">Sign the book</button>
+      </form>
+
+      <div class="wishes rise" id="wishList"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="script">Margot &amp; Elias</span>
+    <div class="rule-orn" style="width:min(240px,70%)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg>
+    </div>
+    <p class="label">Wildmoor Farm · 12 June 2027 · Rhinebeck, New York</p>
+    <p class="note" style="max-width:44ch">Questions we haven't answered? Write to <a href="mailto:hello@example.com" style="border-bottom:1px solid var(--rule-gold);text-decoration:none">hello@example.com</a>.</p>
+    <button type="button" class="label" id="adminLink" style="margin-top:1.4rem;opacity:.55;border-bottom:1px solid var(--rule)">Couple's tools</button>
+  </footer>
+</div>
+
+<!-- ============================================================
+     THE GATE
+     ============================================================ -->
+<div id="gate" role="dialog" aria-modal="true" aria-label="Private invitation">
+  <canvas id="gateCanvas" aria-hidden="true"></canvas>
+  <button class="gate-back label" id="gateBack" type="button">← Back to the site</button>
+  <div class="gate-stage">
+    <div class="gate-panel" id="gatePanel"></div>
+  </div>
+</div>
+
+<!-- ---------- lightbox ---------- -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph">
+  <button class="lb-close label" id="lbClose" type="button">Close</button>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous">‹</button>
+  <div id="lbStage"></div>
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Next">›</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ==========================================================
+     0 · constants + tiny helpers
+     ========================================================== */
+  const VAULT = {"s":"ca9D2czGU3vqXNrHkG8gGw==","i":250000,"r":[{"h":"d000b8816ccda897","v":"tpGwEZm0KpQ14lFs","d":"bWVCysfNY8rs2FP+8ase0qh81eeVG2XCIWEYrsaPkVBTVzbWTgR9wpnYpqHWEoPq5+XmFMG60unKZgD+1IyS/uegs20rL3SMvzMNcsO5TDEHR2yrxEE2kjCDtMCNty1N10O+fECEm05Si/eZ3Jh09guEV+wwZDbB7hHvHoP/Cej/oE67f/69oEYaWsxiq0jUGBITXseN+2JFLuEGS1DVMvIPipagjWxhnC0GM1Se0S9rVXQE7quOoOaU5DdK/T3VbfOnqA3g0oU1wERgwpMWykf4iqqnUS4SENCu36HlbWa9FSO6kkw5kbgWITUrOhIPQQ=="},{"h":"1715b92d989dd843","v":"NKchek2stnYuVGkn","d":"R3TJk3dqu+iv9PVUBZGat4zbRlg/8ldQE11FZg7ewS5CzcH0h4leWFz3ez892a/Q9rOrxWvUblII49ypGIzJwhEhQX+tjwAgcFCgMQ9gF8fH6dRctaiinyCoRzcI8q0w1JFb6EDIy+/iHYWXkQKIMYrU4X4Ym7qc6lavqB5OClknPuPRWea8aQy3qSwscDniqGSdi3CD9FqYoAQbg3CQXD2Xt7HvtXzzFADLNHC8gCqpHsGlVF2NIGdVxvBrQ3S3x8C8NFUBDo9zKXnRKvAvq+B1vhm8eYZj6zVNiPQVlUKpSONgu2Sv3IDZ/ZmNbEBAa5zu489e+2luQUwGPaaN5aVvgYFqGDxsg1t/+g=="},{"h":"c7b2df021ade2993","v":"oDL0qNxGVBw4ODNl","d":"t612QNkpuTd0aIyXU03b5lbpqN+9BGqeDoRS5bDCG+z9debwtWVdW6tPPI5oWvdp8FtEgjkhMrjUxveqjmWEV0Qv6nJ9q5zJh3Afyc/WBtH/xbd96WiJBe5c6JYqsZfEEqHqy0Ry2JYlJPVtnZndlpENRFciUbkgciGAEw/yCXhr8Z0q6zMQHRrV2nnOp+h/bvrJbsEKcr0BDc7AQB/rJwviQp821CRHSmf5M7fYELb8IAgPwRH7tLaffd4uDHb2Kcb4SeWIRY7m6uCVZqV+TvVXqbZeKdlRP2T2Pqb/8OthP7V+I1DqPfj/mk/zf7sQ9Q=="},{"h":"00ca6d576a8479bd","v":"BWKLf+YThEWB2huW","d":"ay4qP+Pi78YqkkXecd6F14SMv/kegNsEWUHuEl0khJK3aYDBhbcU9/r/anpQA4ldS1xVv4S16b732zip2cRUWeNadxypC1jrHNhERnEV16lVXvtUMDrS0u0zJYghVhuIMmcfb5fk9AV8o+FXDGcCSFFb+tnNVr+FT4rhs8TmcZ/68GyO5PW/FRAozwXYmK8huklfcnXJTRu5m+xHLvdZCEaE0ylQIBwe1vnM1CdVvyB5GrqGGfUSYs6rfUxAq6/BBuZFY0odudzjHQeIsCu0K3o5YG9CNzfN60dXGwXOQ5scOpfzIp3QFPR0TwBaOqyXA3GT8meIP01JcY/a3OnvX7ejDL/+isiKOfocbt1TrArXOxXijb+7C10RdeGjX9CH1a1uqGrlka3UXQCfOT611xk1g8HM4WI="},{"h":"ed3a094c36a08880","v":"myyW0N5lOiJuB83v","d":"74s90tERyXzCZv4+M1pNALwyTpfWWG4FF+mdpumro/OKO78+pc6+HyPuc181SIyHQ4EkNI5ThMJqwQH+Vc/zCzrXcJwQFLcikcojjzo4FRqJ22M3ddRKil6PKushUwEWYV+RCsyyxnYHqMkvv9tox3EsgW+9pfPDAFAAdamEde2OVsfLQN2OVFANXQw1wHhZ0CVXjNJWD1Z58m0PCZSnwHepe74QseiXmLtjM2v6ZP+rTWB8J9XMXdGQmAdpMK6Jf3KZKfMnEwANCla6/iLeUtX/LJv3x8arXC8nU6RsweBMgAZ6RzuzfhvEk6XW0tP1/K1XeUQ5l3MfbC/7ug/VQtAJQcmb0YY2JSsu+65tuZZpLZPVAlSyIPcJlNtKtzsBLLUgQ2040ZjrSXHEXwW7vw4Q5mM6DL1p4MhN"},{"h":"2ae0b94aea5976ed","v":"ofR9mnr/ee1X8WPf","d":"JhdsuM05/UoDN/GErBUxL8UBkxRTmzTlSAfczjvJR5rGdSZgW7I04hhroligO11roEqWrqo9DZ04Tt2xgKX6ISvYlAvwoJx15zhZ99DuujuYmoGQdsyDeUgHyv7Fg7pMA4BN2AyM0C01oVEgl6r47LarD6PuSzhe4VB7BqC2jFz1zEj2eVQPU483iiTmhG9DK07dZO/bmY/mAvWRs0QKx/0fG/pFFI0OwZse9Q1WEikDMpAuT0VP30tK59plh+XvdkmQYlBQfbUPf8UsO8Orw/ZTP75JBbop1tyr/OCDWHRClp14bxHcbpEPhF1WWTBObdm6jFhKuBefRu6zfLS0537sjmjYlvOlCchcqijL8S1UI/g52ztrbYfJM0aBrowHOFWxLEF2gho4VjKDSSfVipxvrmAz0pI="},{"h":"49998b22279c9b39","v":"pxBOmYa5mh2EQZ0N","d":"DLiLCff38XtSfoWkrx0wVd5pEH93nDmzfBcitpqaFTgNGW7VmYpD3tCdVlDWIy5Tw3EGou/LIdpAJf7nA7R4o9R+oPKfcWCvJ8Oj9MCIqmOyEi0232GubBzHOVz/MDtdirHzZjCAXITTtBl/0VKOpea/B3E1NzHUg6m3RBhAEGGtGK7A7M+9YCL2/AgbX9PSzIkM5k5W79bN5S6HpWT1qh5jHsiVAT7hTW1JwKVMOYjEA6hwo8rofTnSH9HP+fYQiqkZF3fQtOQ4AjvcxD8r+U6J8l9Qndni0emyVj2BmMgLRv7KxODg9QhCyVeTfFSywk+1fSNOQ9bs1T7tHy590y65v2XEvdmOnWIzQWfnLHoD89NrlGtd/MxbqteY/qwUJertmQcx4OJ8Jq0="},{"h":"13078997cb297549","v":"DDkQcXFN896lZuDK","d":"kycLjck0ihHOdY5rtr4CGiZoyaTKz4QMGTmEdCkPJ5r/CNDj+pm+naAzQIXvmfdVCVOlYeyU8QHU62Bu151cwndDhEWKSFULAhoQr+suYUCu3O1ayR1GOyOKOfOBZ0YBktSfdnxqrMBH2SHfrHr1uj/xtLTdL1x6rRs0red36exaAner56+BjWuvuW4N9qEL4YWHb93VsGCIR/eWGUr9YSOWfQHG7A/uIgJgrAFwDIq7yLSVNlnlHjEYADUR/jSwZKBzomJ+SI2pq1Sre2yx0v5apbRoo8ddHmVLSIzgcaXQvjAft3X99C7CxY7hC3lmDBZMCfpTu8F+pBcw16DJ"},{"h":"5de3b128deafba11","v":"tQC40Af8R0yshBOw","d":"Z66crP6kzIk0XJVRvpr51oKkKQTAkAc00NzzvudOJXtRHK+qpzQwOAr581DLbU5YR2qZtp7R2Nf/O5I69UjrgKpcqEGeH+x3QqTcsXZrRXCBzsCMTnIVTszzPW2egHeUTfFfmzJxMWno87of0dD6RKB5U9IT19BIO2+6Oz9FEIBiZhkCxVjtTRpwkbkZp62K9cL6088wCmIKFW8+SOH5o5hu4IhAaqYMLKLqHHRmXzAYN/KPpPjUlQg+adUpYMeYtQlQVRVQIid6nPscdpk8S29QpmdE2DVW80X6/uZtvGfx30F9xzpo0HQg5c2HbqkzMmXZGN5a4kNhh4ymeSlXYKMtdtvnD2dUAv1LPumh8+IvrgCXsRIaOQsRkPqY88iuhHo6hjYG2Kr6sQPtq42MEIkT3jMdUFY="},{"h":"5054ded7672a2d54","v":"6OWUXzcnpI1c8CV2","d":"sCrZUCy40FmgyVF4fRvw6eBQ1Eq/K4MMHKI7H5kW3OIS4Crdus2AD0HgVtA0PVWLpnV6JtX0gr4C4SqrOyxqced4wKRoAntNuALnAsT4Msq80uv2QUjuqy4nfoFRXRQochm358niVUgAkgBlDsZ8KjInQM7LaZQFI0uT7uFmj+zUUW1uqByZ2S08jD/ZrdGvXB8BFgWs881qCkgmSAGXQjQ3yIG1cl7mqBxWI7or0IKjIracxiX6wVmFA/uv12YeJVqqJFkSzYLXX0NKTM3VLA3yHCp/"},{"h":"6335a54632addc9b","v":"NSxJiqc0D4KJbCH8","d":"aY8c1uly+Omq6PSlQt+EoJzer/0BNNLuNbcrAUjACbc9NRm9s9OuKJSazs9F6cyPa466dL3ERwMX5KUSAaswMaihgAX0T+ptEa89tXR+oLNvHrcdEZ0WJ1tZImsiL7IYVK1Xysgx16c4fOZL9c/fjrIgSpYw4WbPVypJiqORbCabXKs0HrmLcnDN3UsKCNOPhIwOlPX60OJ2HeIur949Lykb03yt3gbGZQsc3fY8m4EgYNgTe7zGp2AAcg3+duD/074Ly/ip4PRP3ZINJzukDCF41xE3gm8F9g/c7T35qrgADkSfhlD7LsQCZjoyJ4H0sppIeW/cPuEg30c1sn8Y/vShG1zQ354ZyQ5cdJ6CD3bwtorpBymZq94YxXgIzL8lNbyGSORx0LjWK0fTWns+yTmT9HhtYPg="},{"h":"142464ce99080c81","v":"r48Dlix9R8DHykwU","d":"TwbBNqmKNNrNmOaO2WxiTj0B9K1funYd/p7694L6htL+gFGLqRCCZ9i6uUb1FIn//BMafFRPMTCsErAzqJo6DqwMkfSeU2orTsNKDitExI1/06aM97JKoEkzgbUU4GORVINv0aXGPv05hl93AQeld4dGHNP3J9vmyfhaTBJ8aRzGtU+mGJ8ifK6R9vGpqAh9OVwZyvhk1ynrMPDL/W28FX/CHwMrZcxD8KWSFE+y4/tqjN1qrnDIdJwF+8WOLXmUtJENuXGdD3EvhzdqQB6jMlPcafaf0U8kzm7WeZB5/dX1HbaDuLXL6MAHLLPo/KP9ssJdQVaSoMECCapgGaAdOwSe6WwYwBnbNTJSeXrbeayGT9IsYr2e1FWPh1h6ubirGQ8LTN9XP7TSUio="},{"h":"5e4eaf83a13a9294","v":"OAsoEAAfyNPxKFN5","d":"CdBnXxd1DQeN2G7UO2pggZ5xVl+acT61j4jyGZ+U0K3ZloAKTGAQ5w6+UnNO82Qe93N/HB2n+mIRqfgdeFSMROBornQqmpKE7K/cVszLgvSRcfH3xrgjXft9kSt/mCq69D5YkX5Lfo7KQbAl/Mvj2wvrFc6hL/D2F1RdseEblWq8m2rvilcu+NtHUUMHEPH1Hl8GKEIeuhIg/AeY5Uy2aEaj1tZAC3QyAE8vWx6VZnPKCZLk7RBzKzK8vVeIFDZX0izkS9xLZDSvxpZ11Uz2n4kp/K8="},{"h":"03732dada6fab3d2","v":"nU03/hvmpjYlKPh0","d":"8Pt3nnKQldZNTeb0nX94Qcu644KlTHTZcPJxHGG2nZyQ+1u+u6fUGz9/8LsPfI2iShu64ZaF2nC8K4MlisuUmr5q47JhOOC48h9Opny7sPUcHDS67fnT3HGMBxfI0Ztr6OeYtIVHfYvckzvHOpgIonVZGyjpQs+esTo51cQB4Pw2fGRly2yV91oNZDMt0KT3cvcMIO/osAUNECal/dwAeh7zBjlPRTDXF//0NY4wxBkmDeSuZX27m8hmOnXsP7Oz8XTy70WfPYwnts+6GVSUAUCzg9sBqP/KUk7Dtt+DAXMLYIzHRIvykl1R3bCXCxmIVDPPEAGS"},{"h":"9774e0b17e4c18d7","v":"nC+Y7TWh9I5hQgtO","d":"BXKeLcI258ZHi/47MXwOq1vAOsVX+k/lu0hYEphwN8PCJutP1xvSCD1M6hWqzDJ9gG/lFJLoOvvRljcgXDybs1vRN+y/pBbqZg/MKCu3U/7TTbUGmX8ZUGCE/kdVBU0jbyt20yaDzx+ZSk39kzxnXJZXBsskU2RKFKZVcRqbRgrHrtrqTDr5Byw6/TzvmXUI5eSX1CqzmLui/oeih13K+wIHPkIWhccHKX89/oWuxm5etpvWZlCg3ggF19muIdU0uyGPlw3n5wEXG71YtoN0L3os8NFrrrhLc4byjwcR14hs8E6N0uP1OGiPQ54DP3+D4cSv/19UuORWrVAE9P3Siv5BBS0dHXRFk3GCEypBkxgfVnMKCVljxPpqAXkWIG0Bf6Zkhja6xMAEo84="},{"h":"631f15716c15ac35","v":"OPPh+bQyBZ+7yyr9","d":"0Fck7Z+A20W7pksE90zujAPvZ98TRdGS78KkMyHnY57yYUaQyTgkIxb5/bRyECkih0a1d5HfwBf3PPJbgKx2GHH3aY61/BTG0pl076kR4Q8aq3i19YV8TxkvFqWkfhgKgb4T1nRzgNJEqJf3vo9l69Mwq/wXIXV2dDgVgZxIi3KGMj3krXJR2nTTomFlgKxn9gjriGIuT/Szdi6M+jbw5A69CHf0yQ+FCiuACzx3jRWqmhMFwGFv8kaciSL4GmPLaFOBNnkqMgN4Y7yoEd0XtKWIcVYo"},{"h":"34f17a2d024bba24","v":"0QcRtSEGd3qRjrK5","d":"lGXdqw2ly9e2oiW5CvjIvBx0LbleAgwmvXPcMrf12T5EMoj9rb+PA/4lmAKfa0ZL/LlXNg4OjgigpsRjVzwvEbzzurJlyfYm/vTiXr/WmAI/G33OhLIu+GndNzTyjwtaEjO1lFOlbJ1ProijAd1Xe0JFOK6WbE1ge1fl+G6sJoJHgxu3ZssJd36fA5ie6wTdBkXS3Bi1HACl+egh6dw70MpIeq5wsWoepi8smBe31PjsfbBD/nM5yWSFu5qrK95p8QRYxeQhXlVs1De6WW2yOclGt9Fp8IiC5HbmaCct9pr9BXYuVaAsGnRJZY61gU8V4ncdsK2YuUEXhTn2NhYPWJclGm9KXdScMJLBniDgE0cYjVD+zRQqbZF/NrU0J1g/mgIVY8tvRNmzDZO1pE9cOXvN+EUT1iLtgldes8ISH3pq/vIKXLElQ1r2FD43FqsfTNmQam+vE57ZsAo0FGjDg3cnJTbRw+AA1emK1bw56ao1/zpH8YTA/BrzjNBb8Mge86AeR9U3EdAgNwNsCbtdIgx59gWyuZKtfb4xczTUhgbYAW7nsO9JEmYeGrAmLclCmvTk9aGuDznTvdgHXlbenbh/SLwOGx5+ZzFRjTVq0KSwcYFOsoB+dsVQZukIH2//1jV365sdJcA95qpnN7UdwiHZ977EXKL4jXl11JQgsFw8uuf+MHfaHrmRynESQ94b3HZbt2JiOtwDYnQsDu79b+QWttYrltZU5MDpFJsq2BoeFSmnX74f7R0wko9PxL8d2m0s18SafIB0jptlv1gxDEnnvvE+rYpkkNBVYvY1MH8Sw1jiVLmh58X2k+9ziC7rpvKIq6QzLY/fr32uVJ/w5ssX5n4K7Q9p2LjVi2CPO8R2sTdPshMqgWqqpFr3B/dkfiH3BVTu9e+MXNZFcBKw/t1w736B8Pxuvr/BNmgsWVejMSJ3NOLaZCsq1ZxxLkItJfVatB1aSIDZGhp+gcjMictiWAXdRqaPB8QWNPFz3XUrBHBy0tjyDH3Rr+uQfq0Glo4GpAtmsVOGEhLSfZQ9SjZANj8rub+tyq031iFoYKh3jK7VMVLL9HDDVd6IMkfMmMGkisbH61U4fNshivShzEbtgTmfKBB6Zb5vkUsjUdMm6xng0iZS"},{"h":"978a0f811aa4e29b","v":"snyR7vYD1KgSYuX8","d":"jr6hA3YkxQMkRaho1JfZVjWfe9bQy5S8sV9D76/YDt7Vu4lDaIRfnh9J+pdosY5sPEy2ICn57HJ+Gxvw1c4ZpK2g+7c2xaGEPY5e0ooh+xNaKKGVCk1AqDdeWPZqdIdV54VrN4CtlIl6EFX4Lo/TIh0qYvX28Mz8wO5TAmmEvKUwaPWLY46dZ9aypEfcT14ljQNPay2HeLRDKIJoRr2vVj4U64fHFpCj54+M99jmw25tNh81FjK+B3ldAavbbDqKmACoQ6kCe49eLUo+ymLY4tp4zmExw1ux/b1IaRWPYFRTGkT1u7Ubg+yVpgclIHzTRar426wLWEFxE5dBWA6+mgQ4UIsdB6Wa6zCUgQ=="},{"h":"8d953b98f5f27652","v":"lw4cEnxk38O6Gc/2","d":"/DOR9Lu+mfoA81LwHOM78ke36LsUjHmti7kI3AyUG16l2zp9V8ET26vZNej256S0zQOKMy0afy8iCFLrOTcNBPrTtvc0qL+mhzCNz5C9nuNLGWZyoZj7UuzWzuD5iYux+R77YCg5iEu0o/Sy25Yj6iplBhvW6sX4ZKAVxzsaODqm4kvHwGrCOBUfVoQspYo3kyXq7SSaLx6Es5JsrTyLWfw6L7ylfxaRGyGwILTSwZHv8UTjJul4qDjFdkzZVA5ryxc9zGd1UKhu2vqjfw8yScDJlUboBmloP+0g+ANKY5mESj2R1nUm4SMtsuxlzCMnqrFV/bjmuI6g2EDSEQsg9lfYac05MOSRRYOP2+i9gru6LDDqDvN4U4UYwnT+cZTnpRr6fJB1dERTWzJPYavxS7Sen+BLJEee2Ai7"},{"h":"19f57886193df576","v":"BkK9cq5xuYhG51b2","d":"NofDUeHs4eQyv7AtPNMHxS1eQ8BFy5Qz+4jWhjKs8INi7gHbxugQvMAMjxuVFVQlUZm6kUh9nIHJ72ie4RErAl5nZlCWkHQ+FkyWUgmGWhzh/LjtXIxZdSBfqxEMohFLPIa8/gGWIhRP4xb1UAzPOPWW05o8sa6PQQfzLyxieW9aiKBdJmejwOtQIrDnopPZIntirjVgYR6mQzltcHjkzkOdOrb2Mrfk/Ny1SBIXZg9ya2n91vkIwbXSwx3k+u0JVS8x90Gg591F7+BWQm+Z0RVPNo0uGL/IGbq5/WwQpDMKPMVwvA+drH5GbxHx1Uoll9VyVVwvQ2WDhGUCg2DSijBadvOwXdWMB+kpGlulN2PKR0/bG8KGd2u5zu3gdvlD+EMkQBaux4g+tEk="},{"h":"be59daf043ccb2a9","v":"g8XbB0wQiYR9Cfbn","d":"WhppjmVMTycpo5eXAsnEgy2ZPlg7QSSvL8PaFiedvZ/DaP1MirpPByWfhbTxFzz0h42L+TpO6HFIWVrMIBIlj+6gyH++FCfFiO3iwJBKyLMVE07uhYKoAjoQtQ5H/0zvsj5Llhp9dgrOqF5tXLARrz9kOJY+2T88gFb6aV/1Rrwjte3eNfI5TeSfjWY73Y+GHyVaIlLJPSPh9NV/GxRerPgFYBP1obRFO7lYiBtfsC8IzBAz2lVgCMo6mJUS1gX1Gw1xn/atSlDkWS54S3lit6xUFoJwKOmxxrQAbYIFmPTDG+cKzyD120UhtUevikpBFIIjGOZewPTZg3nSxm0nYsJirBHmsQ=="},{"h":"ff49226fdefdad1b","v":"3Y6Duk94O9DOiF8b","d":"gK66K/cpVWn8AJfwNNOGn5DvrZkUyOuMeKUqZ9wR6w9lYVKFjbbn6hnJ5Tppi3eyRP8ZuyZ9iO0m31gJLKAhFRN/kbEea7AaMgI+mxxigy/z21LtUt9O/CiAxKcwTFCkDgVX10tdZIRdZXHHOne6KC7nmvTRAwfi9KxsQ7QdpJFtdy8dIHFwxeUB3LQoXbnqyKYJPl1KmAjy4CFUSsV4JAU2InfYQ1+gzAAh+upg2QaRRcSxxr5DsfHYSCtvzOOmNb3MKkCimCpV+F/cBY9rLRBWbnq0"},{"h":"0b9d718e85273428","v":"gKHEydMe61ui2m0Y","d":"MlnNELUKizKN3xRmFZnO11EmcoH20THBJTDZz4RrZA7Ypt86b7X4G2lC3UF/l5DonbofgaVadbEzJpoHb2bnh/DXyNAhypI63xNyJoBGEzXBThtnFUh8mS3P70HaolhbbmgWS8FgJiVTlWnpmGyAVMIyEXfz3VaBcsFvOVyh3vDIvziSHaM3bSWwy7TdS1H2LWT4ZFBgRpvOk1o8dCTVjyySWgidT6N2fqOxjIIWWbbfpEtjFlRU8v5Vnsn5NzeinTboXJQTEmJtZ/d710GynwwsKr73zJsEhiMmhNxWtEvawXkZt6wCPiwCYwDCypTBa4KWbsjP"},{"h":"635f933771117e55","v":"qss8AMAl5NVr/jZ/","d":"8NCHjqiVspS3ucMErrQVl6CIUrFU9OCd9oWnKMhmSqAhyecBL4aKamAg9+7+YQ8bYw1PMDGh0QUfWEpth7A36TerG2+th3l4kcZtXLCPMFujZ33inD7A62JBsZ9cnaL97XTWBV5NnEr/WPfw3JoyReFrPol1V/sOiEovBgxey8beulaauWPssbkZh8vxsry9RqDqZdgDDEZGHJCuSJaKSVEhBuMovitnGMqLlsxuty4nxD2+vtdT8ZBI0/JUc4sR59kRNHJbLeDheJsIuUbrCa+Ge0L4T47gJZGi86oA8uMInasB7vyMbANg3K3K18xb0R+JRl44+fWLlQcAstL0MOwrzt0Le+zA8+x+fKE+1mddb99EgiziaJb24eLisrWpD4WLxlNgnI9+dqecYDPYmD8RG1JNXYsViO5/"},{"h":"8a71754d4e4302a7","v":"nYyRFi/Q06T3dKU6","d":"5SnqF6XIyBy0sO82zzOapwhriGbWN+HSuuCaMD9Lb2JiEU8koLPYTPkz2eSCGYI8LCnRaHLx/rZmptPtZzgvB2ldSsDWmXPJ/zYq0m0yY5aUf3bZvSP0QZoRT5Y5drxN3ClMbJH94La6x0li/Bgb0Hh0k8qQMN/f53EYUk5RY0T3AvBVf7MP3PtnVwsoTd4RLv8HfVlbquCjenp9II0dl9kkeiYL6jpu09z6AZnURt6WP39YUOi7Klq6mI22dTAbYPPxrpQumaWvqZEoPOfetriLtPpaydrraOl3N5IBXKgNgK5YZg2LeFuNPE9JoevcGQ5/f0YmtDZB1qxcnOu/DDF4iK9Es8EzoGxCkUTVGgTnDAWzg6Mobyj6pyDSIMgaDTJPhXTjM/QE7VM="},{"h":"8b209efa3374fbe6","v":"J154ih1yda68g9jB","d":"5JZel//HR0V/kK4EQ8AZ4E1PwNBLsN4+oB9oKpmTdxDkvx7HXVtE8cJH4e+ZdQ6iFn9A1PHi2+P1GMu/eQzS9kfoZZHkLiVI2cThHzQQV9GMhJDe4zE6H9TNOlixsARuVn45MszYrNhP6FO1bJQ0hXLykqhZ3iDZwKLosUzrNBhHqnNH0nkvZaY1X1LC1kqQHqvyIistzcvguKyGABnHVqp4gh9+a3S2dbAPQrbEXxhpueiYwAu4l/cIdl93chIif85gpsa5WD2t7rc5/9X0VqYPQBBEX01WCNoO9VGW9V6ndHqtUx55/kiF2x+u7fZF5nHHyGwMRKXrM/NanccuZxIWP5ALMg=="},{"h":"53f245d30e6bad3c","v":"VC0HODpkTDsviDIz","d":"e+AmuMxhjlYK06IAdbXNhDIV80fQfGQrNcwY+LuI9lzSozacvGaf5ISc9JHDjxnZCH+YjdgadRwFLLstqNtnuqasnJHLIUmNZA9Lnokzl20bB+Q51EegzIiAN4IrIt7LdrGQ9xnpPoJU/4MbFl/q3JbjhKJFOHihIorW++ge78Zd25yqkbMd8IbbUg1Bl+1La4Bx/LWDyLUL+jz4csorDbViDd2txrszTBoCCz8jPIJ1brZaS3w/43kWds6bojeMgwcZooEWJ81HDaMH5ehqOPMBkVm/MIO/DFkb4QoKZZ2foT7/cS3bKcyir2BKw0Syu/9nHbPUORAM2DXotzsvFf14bv0dfuvROr7tmYUsiGKk9TaJqiFoVN81AMOa7JRmFkZUNNLsVEK0/2Ehvyo/tpx3pIriD24="},{"h":"1b926dcb61259d99","v":"j5R6T7uSNpCHmUb4","d":"ZnUULNdu9yhCwbuZV0aVb/V2ptjhtaIHyXe5P4ZhU8a204BjUGLElp2K0tpLgtFWYmBGW9AhQ4OBhMDq/oOIabjTiSNw6GYZq7FtWVrKhKrP4V0g/RqCs6UcNitzwMlkBjS3IF0rS/Ko2/jbiK3Ru1iXW+9xSpZNPl9oOrZeU+92MNOTtmwX06UJey0Evfz95RHwkmFMD0AavmkqWea7Z5LgjGcrTQItO+mK8iw8wJkZWJ2gW3uAhKG8gBQcofp+1Aaw9za88phLQ6CK2jv7c7AIQaQrZ1Y641wNYYkZSCAQ1QT0Rj5KkeFHOW9+wG4="},{"h":"98b3f5f653884668","v":"S04FtrOiOMiCKdaV","d":"iFKsBNU9+RZ1KvCfkGf80g06981bnAV/yMl7dsQnhthpnKLAoLF0kAoxp99ZgHgYMDXUkq+T+WEgzN+RFBAKDI9fwfJaraJdNXXCHw1n8ByUdSHrnKMyyn3e4b5fqsMKgavdIXXfJhau3iCwLvxxWzTmReGZ/VOqZqvxOA+xJHlMGnXfmKN2cvfm6p26tEpVyvE2ZFvkMk88JS08EonpTsqTK+KPN2zvZvFD1plL3osOjin5TfJSTVoD+0cDG0vHFXzz0bLnhmttu/NrUBplIja4cG1rSJXmflSMbPx1NxOjWVQwk0b/0ajGOepgIHaVB61asVD1qHtSUUfvZ+qL"},{"h":"f6906f7f5f163942","v":"pd7zjWbGNbv0Z+Mu","d":"j3BN5zYyt7b1NarFjZAriA4xsXBPsbeTn08DbrLRx9tyhZE8zr/Z7ZpbN/Yv8j1dr3565InHd0pbltO+TnHLk+KIV7LJLE9+TX/vssPjY17LXpfp+E6LRIrO6Fj/xrY1RGqVUokm2p9BgrZpskN0fmbBF6sOLEva8hg1IuOdyOn4cHf21Wt4EQsRf/9CTRlLQ/4asg3PchAMX4vmwM+BNFBpQ065pnWDel5lgXPrw55bdP+KE8279/rhnDDSJhV0FbICwlsP6CegMZadfiU24kNR9F4="},{"h":"6e06fd888d106966","v":"PF7r74Bxq2uY/MP7","d":"qGk3Ltzwm3AkgGU0+HrpyKxQfGKLPgr/vKRANXBABFETaqE4pifAUNJc3vl9HNal/cydBbwk54JIfn0IBXWYGY/sosEiYVwflG7ZGZHLmAELfTdbdxyeDy+2uHS5VAfJ7qo9oVpGBe4jh3ME7PzjN+8gqWFnT6Q5tbYCFwT9aVf6DOP7XatRZdV89w+895Bdq0me5IAld4HJkkKbJTqbrCJ4g1qYAgl4Eid9TMF6BygNGpdgC4O/N22jNq80wbBO3C8ZslCNpPi/wXF9o7fZgd1NeiQ0PVEx4FkjHZHzSf4qNt/7hJaYZV4MH/vFak+83808z7s30mLqUYvFjZ1M"},{"h":"ac5f8db2b619fd96","v":"Xc8GICDOcVQl5/BE","d":"Asg6PnkwMn9S5HjKBEwnZaGvxriTWBgpbQ9gZLHggZ83J94mVeNaCjnSwUD4JSTIS/HChQT998fpYiG0vhlCvUPs+dpH6KmeMoYR/oeMA0k+uCkYrNrbxmw6I4PC8bq6ne3VV08cSdzFk5TVaYbKZlUw1mNhQ8muDVSSZR7e75hpcUAEQ8WxRrUwn0a3vx2OuRgxzrqG7DyHoM/Hf+Tb6GwB4w9cWfdOp3ed/NReL94Znmdnc801RLPvnptrU+QaM9wJz+Sr82GB2ZwoJ+vdHFkZ280z8VG01Xw8veW5P1DThoFpvjmwHByjZLjde9TvqA=="},{"h":"b956d6240aa1cd27","v":"XrAIxJnUP3g4ENSO","d":"CxYc1Y/h+vY8Ffek46ARhDBQ+4Nb2zTPrpZ1YVtNu6oq9IlFw6VjWcqoJAqAebTyVJNhnactYghIsGNyR4wYEr8sm91nPnjWu4Kk0jEKDBHa0+vS+4cQIQfC52d1pDdulKCHWMx899cQwf2PD2UcPnweiPcPJENlX2dNkXNePy9IAm4ejF0aeGlHK4XMrqpwzIZA6rGXW9rIFeJN0B0cikyPeJHMQEI42meCbgk7o+1VBKWXrfwV1THx9H47+H62HMahXrWdF5Ru1wRWvLwEIqly4QuonwxZrNrmvpJTyQ4eeDlQSqBVGNAfPUvuNFYNmW8MtmWruEL46B1GHccvGfCTo8yNNg58gtb3rNSFVA4oTj03nDU+klvwpoGBcKUK36dRBbPVwO3aaBEWaeVrRHwp41t6aK07BxVj"},{"h":"1a61eb4050f48410","v":"TrAXff4CspzZ38E2","d":"bmcIAIP7b2mvRiVpbcrs4MPHwyvFwyFcTcq91oNY0TPxnuFVpm3XRfXeO65OutI/Mj+ZU6rVotQXe6OgLGLamSSn6/DazeffHjF4HBeUVO+GPPsPyOdWnO1vHlZefDxxefKLxydagNFXiT/pNT+WEJzuQdHMs2AhekSFPUmZlD5qenzUYyde72rib491pGQpni8KhCUDjBeLauzpzldhGWA8ygyVLAwsbe+cM0jSYHuU+Z8z5d+eF556QDNXBKqlhL5Z2C045FVN853EG1qE3w0iyAg="}]};
+  const WEDDING = new Date("2027-06-12T16:30:00-04:00");
+  const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const $  = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const el = (t, cls, html) => {
+    const n = document.createElement(t);
+    if (cls) n.className = cls;
+    if (html != null) n.innerHTML = html;
+    return n;
+  };
+  const norm = s => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "");
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("wildmoor." + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem("wildmoor." + k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $("#toast");
+    t.textContent = msg;
+    t.classList.add("is-up");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("is-up"), 3200);
+  }
+
+  /* ==========================================================
+     1 · generated imagery — soft-focus blooms & portraits
+     ========================================================== */
+  function rng(seed) {
+    let a = seed >>> 0;
+    return () => { a += 0x6D2B79F5; let t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+
+  const PAL = {
+    hero:    ["#EDE5D6", "#C6B99F", "#9FB187", "#D3AE9C", "#7F9268", "#F7F2E8", "#B39A78", "#DCC8B4"],
+    orchard: ["#E4DBC6", "#A6B78F", "#CDB4A2", "#F0EADC", "#8B9C74", "#C9B994"],
+    dusk:    ["#DED2BC", "#B8A88C", "#C7A99C", "#9FAE8A", "#F1EADC", "#8E7F66"],
+    linen:   ["#F2ECDF", "#D6C8AE", "#B7C3A2", "#D6BDAD", "#A99B7E"]
+  };
+
+  function fit(cv, w, h) {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    const c = cv.getContext("2d");
+    c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return c;
+  }
+
+  /* one noise tile, reused — putImageData ignores compositing, so it must be
+     drawn as a pattern rather than written straight into the target canvas */
+  let noiseTile = null;
+  function noise() {
+    if (noiseTile) return noiseTile;
+    const s = 128, t = document.createElement("canvas");
+    t.width = t.height = s;
+    const c = t.getContext("2d"), img = c.createImageData(s, s), d = img.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const v = 40 + Math.random() * 175;
+      d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255;
+    }
+    c.putImageData(img, 0, 0);
+    noiseTile = t;
+    return t;
+  }
+
+  function grain(c, w, h, alpha) {
+    c.save();
+    c.globalCompositeOperation = "overlay";
+    c.globalAlpha = alpha;
+    c.fillStyle = c.createPattern(noise(), "repeat");
+    c.fillRect(0, 0, w, h);
+    c.restore();
+  }
+
+  /* blurred florals — the background of every atmospheric moment */
+  function bloom(cv, w, h, opts) {
+    const o = Object.assign({ seed: 7, pal: PAL.hero, count: 16, blur: 44, streaks: 6, dark: 0 }, opts);
+    const c = fit(cv, w, h), r = rng(o.seed), P = o.pal;
+    const S = Math.max(w, h);
+
+    c.fillStyle = P[0]; c.fillRect(0, 0, w, h);
+
+    // soft wash
+    const g = c.createLinearGradient(0, 0, w * .3, h);
+    g.addColorStop(0, P[5] || P[0]); g.addColorStop(1, P[1]);
+    c.fillStyle = g; c.fillRect(0, 0, w, h);
+
+    // out-of-focus blooms
+    c.save();
+    c.filter = "blur(" + o.blur + "px)";
+    for (let i = 0; i < o.count; i++) {
+      const x = r() * w, y = r() * h;
+      const rad = S * (0.07 + r() * 0.20);
+      c.globalAlpha = 0.52 + r() * 0.40;
+      c.fillStyle = P[Math.floor(r() * P.length)];
+      c.beginPath();
+      // petal-ish lobed form rather than a plain circle
+      const lobes = 4 + Math.floor(r() * 3);
+      for (let a = 0; a <= 64; a++) {
+        const th = (a / 64) * Math.PI * 2;
+        const rr = rad * (0.72 + 0.28 * Math.cos(lobes * th + r() * 0.02));
+        const px = x + Math.cos(th) * rr, py = y + Math.sin(th) * rr * 0.86;
+        a ? c.lineTo(px, py) : c.moveTo(px, py);
+      }
+      c.closePath(); c.fill();
+    }
+    c.restore();
+
+    // tulle / wool streaks
+    if (o.streaks) {
+      c.save(); c.filter = "blur(" + (o.blur * 0.55) + "px)";
+      for (let i = 0; i < o.streaks; i++) {
+        c.globalAlpha = 0.16 + r() * 0.22;
+        c.strokeStyle = P[Math.floor(r() * P.length)];
+        c.lineWidth = S * (0.015 + r() * 0.045);
+        c.beginPath();
+        const y0 = r() * h;
+        c.moveTo(-S * .1, y0);
+        c.bezierCurveTo(w * .3, y0 + (r() - .5) * h * .3, w * .7, y0 + (r() - .5) * h * .3, w + S * .1, r() * h);
+        c.stroke();
+      }
+      c.restore();
+    }
+
+    if (o.dark) { c.fillStyle = "rgba(52,45,34," + o.dark + ")"; c.fillRect(0, 0, w, h); }
+    grain(c, w, h, .07);
+  }
+
+  /* Soft-focus photography, generated. The convincing cues are bokeh discs,
+     a blown-out light source and a heavy vignette — not a literal figure, so
+     the figure is only ever suggested underneath all of that. */
+  function portrait(cv, w, h, opts) {
+    const o = Object.assign({ seed: 3, figures: 1, pal: PAL.orchard }, opts);
+    const c = fit(cv, w, h), r = rng(o.seed), P = o.pal;
+    const S = Math.max(w, h);
+    const soft = S * 0.055;           // blur scales with the image, always
+
+    // --- ground: a wash of depth
+    const g = c.createLinearGradient(w * .1, 0, w * .9, h);
+    g.addColorStop(0, P[3] || P[0]); g.addColorStop(.55, P[0]); g.addColorStop(1, P[1]);
+    c.fillStyle = g; c.fillRect(0, 0, w, h);
+
+    c.save(); c.filter = "blur(" + (soft * 2.4) + "px)";
+    for (let i = 0; i < 8; i++) {
+      c.globalAlpha = .35 + r() * .4;
+      c.fillStyle = P[Math.floor(r() * P.length)];
+      c.beginPath();
+      c.ellipse(r() * w, r() * h, S * (.16 + r() * .3), S * (.14 + r() * .28), r() * 6, 0, 7);
+      c.fill();
+    }
+    c.restore();
+
+    // --- the figure, deliberately barely there
+    const warm = ["#B79680", "#A98B74", "#C4A186", "#9C7F6A"][Math.floor(r() * 4)];
+    const cloth = ["#6C7460", "#7A756A", "#5F6857", "#847C6E"][Math.floor(r() * 4)];
+    const hair = ["#5A4C3E", "#6B5A47", "#4A4038", "#7A6650"][Math.floor(r() * 4)];
+    const n = o.figures;
+    c.save();
+    c.filter = "blur(" + (soft * 1.15) + "px)";
+    for (let i = 0; i < n; i++) {
+      const lean = (r() - .5) * .06;
+      const cx = w * (n === 1 ? .46 + lean : (i === 0 ? .36 + lean : .64 + lean));
+      const hr = w * (n === 1 ? .17 : .13) * (i ? .96 : 1.04);
+      const cy = h * (n === 1 ? .40 : .42) + (i ? h * .03 : 0);
+      c.globalAlpha = i ? .82 : .9;
+
+      c.fillStyle = cloth;                      // shoulders
+      c.beginPath();
+      c.moveTo(cx - hr * 2.6, h * 1.08);
+      c.bezierCurveTo(cx - hr * 2.1, cy + hr * 1.7, cx - hr * 1.05, cy + hr * 1.05, cx, cy + hr * 1.05);
+      c.bezierCurveTo(cx + hr * 1.05, cy + hr * 1.05, cx + hr * 2.1, cy + hr * 1.7, cx + hr * 2.6, h * 1.08);
+      c.closePath(); c.fill();
+
+      c.fillStyle = hair;                       // hair mass
+      c.beginPath(); c.ellipse(cx, cy - hr * .26, hr * 1.1, hr * 1.28, lean * 3, 0, 7); c.fill();
+
+      c.fillStyle = warm;                       // face
+      c.beginPath(); c.ellipse(cx, cy + hr * .05, hr * .78, hr * .98, lean * 3, 0, 7); c.fill();
+
+      c.globalAlpha = .5;                       // rim light off the left cheek
+      c.fillStyle = "#F3E6D5";
+      c.beginPath(); c.ellipse(cx - hr * .42, cy - hr * .1, hr * .3, hr * .6, lean * 3, 0, 7); c.fill();
+    }
+    c.restore();
+
+    // --- bokeh: the single strongest "this is a photograph" cue
+    c.save(); c.filter = "blur(" + (soft * .5) + "px)";
+    for (let i = 0; i < 16; i++) {
+      const bx = r() * w, by = r() * h * .8, br = S * (.018 + r() * .055);
+      c.globalAlpha = .12 + r() * .26;
+      const bg = c.createRadialGradient(bx, by, br * .1, bx, by, br);
+      bg.addColorStop(0, "rgba(255,250,238,.95)");
+      bg.addColorStop(.72, "rgba(255,247,232,.42)");
+      bg.addColorStop(1, "rgba(255,247,232,0)");
+      c.fillStyle = bg;
+      c.beginPath(); c.arc(bx, by, br, 0, 7); c.fill();
+    }
+    c.restore();
+
+    // --- blown highlight and vignette
+    const lx = w * (.12 + r() * .2), ly = h * (.06 + r() * .16);
+    const lg = c.createRadialGradient(lx, ly, 0, lx, ly, S * .85);
+    lg.addColorStop(0, "rgba(255,248,234,.66)");
+    lg.addColorStop(.35, "rgba(255,247,232,.20)");
+    lg.addColorStop(1, "rgba(255,247,232,0)");
+    c.fillStyle = lg; c.fillRect(0, 0, w, h);
+
+    const vg = c.createRadialGradient(w * .5, h * .48, S * .22, w * .5, h * .5, S * .78);
+    vg.addColorStop(0, "rgba(60,50,36,0)");
+    vg.addColorStop(1, "rgba(60,50,36,.30)");
+    c.fillStyle = vg; c.fillRect(0, 0, w, h);
+
+    grain(c, w, h, .1);
+  }
+
+  function makeCanvas(w, h, draw) {
+    const cv = document.createElement("canvas");
+    cv.style.width = "100%";
+    draw(cv, w, h);
+    return cv;
+  }
+
+  /* ==========================================================
+     2 · the envelope (built in script so the lace stays parametric)
+     ========================================================== */
+  const EW = 400, EH = 278, FLAP_H = 150;
+
+  function svg(vb, inner) {
+    return '<svg viewBox="' + vb + '" preserveAspectRatio="none" style="width:100%;height:100%;overflow:visible" aria-hidden="true">' + inner + '</svg>';
+  }
+
+  function laceAlong(x1, y1, x2, y2, count) {
+    // scalloped lace: alternating arcs + eyelets, hugging an edge
+    const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy);
+    const ux = dx / len, uy = dy / len;      // along
+    const nx = -uy, ny = ux;                 // outward normal
+    let out = "";
+    for (let i = 0; i < count; i++) {
+      const t = (i + 0.5) / count;
+      const px = x1 + dx * t, py = y1 + dy * t;
+      const r = 9.2, ox = px + nx * r * .62, oy = py + ny * r * .62;
+      out += '<circle cx="' + ox.toFixed(1) + '" cy="' + oy.toFixed(1) + '" r="' + r + '" fill="#FCFAF4" stroke="#D9CBAE" stroke-width=".75"/>';
+      out += '<circle cx="' + ox.toFixed(1) + '" cy="' + oy.toFixed(1) + '" r="' + (r * .54).toFixed(1) + '" fill="none" stroke="#C9B792" stroke-width=".55" opacity=".85"/>';
+      out += '<circle cx="' + (px + nx * r * .05).toFixed(1) + '" cy="' + (py + ny * r * .05).toFixed(1) + '" r="1.7" fill="#EFE6D3"/>';
+    }
+    return out;
+  }
+
+  function buildEnvelope() {
+    const paper = '<defs>' +
+      '<linearGradient id="pg" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#FBF8F1"/><stop offset="1" stop-color="#EDE4D3"/></linearGradient>' +
+      '<linearGradient id="pgf" x1="0" y1="1" x2=".3" y2="0"><stop offset="0" stop-color="#E9DEC7"/><stop offset="1" stop-color="#F8F3E7"/></linearGradient>' +
+      '<linearGradient id="pgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FDFBF7"/><stop offset="1" stop-color="#F3EADA"/></linearGradient>' +
+      '</defs>';
+
+    $("#envBack").innerHTML = svg("0 0 " + EW + " " + EH,
+      paper +
+      '<rect x="1" y="1" width="' + (EW - 2) + '" height="' + (EH - 2) + '" rx="3" fill="url(#pg)" stroke="#DED3BE" stroke-width="1"/>' +
+      '<rect x="9" y="9" width="' + (EW - 18) + '" height="' + (EH - 18) + '" rx="2" fill="none" stroke="#E4D9C4" stroke-width=".6"/>'
+    );
+
+    $("#envFront").innerHTML = svg("0 0 " + EW + " " + EH,
+      // side gussets
+      '<path d="M1 6 L' + (EW / 2 - 4) + ' ' + (EH * .52) + ' L1 ' + (EH - 6) + ' Z" fill="#EDE3CE" opacity=".95"/>' +
+      '<path d="M' + (EW - 1) + ' 6 L' + (EW / 2 + 4) + ' ' + (EH * .52) + ' L' + (EW - 1) + ' ' + (EH - 6) + ' Z" fill="#E7DCC4" opacity=".95"/>' +
+      // front pocket
+      '<path d="M1 ' + (EH - 1) + ' L' + (EW / 2) + ' ' + (EH * .34) + ' L' + (EW - 1) + ' ' + (EH - 1) + ' Z" fill="url(#pgf)" stroke="#DED3BE" stroke-width=".9"/>' +
+      // addressed by hand
+      '<text x="' + (EW / 2) + '" y="' + (EH * .78) + '" text-anchor="middle" font-family="Great Vibes, cursive" font-size="27" fill="#4A443B" opacity=".72">Margot &amp; Elias</text>' +
+      '<line x1="' + (EW * .34) + '" y1="' + (EH * .84) + '" x2="' + (EW * .66) + '" y2="' + (EH * .84) + '" stroke="#B08D57" stroke-width=".6" opacity=".6"/>'
+    );
+
+    $("#envFlap").innerHTML = svg("0 0 " + EW + " " + EH,
+      paper +
+      laceAlong(4, 3, EW / 2, FLAP_H, 11) +
+      laceAlong(EW / 2, FLAP_H, EW - 4, 3, 11) +
+      '<path d="M2 2 L' + (EW - 2) + ' 2 L' + (EW / 2) + ' ' + FLAP_H + ' Z" fill="url(#pgl)" stroke="#DED3BE" stroke-width=".9"/>' +
+      '<path d="M14 8 L' + (EW - 14) + ' 8 L' + (EW / 2) + ' ' + (FLAP_H - 14) + ' Z" fill="none" stroke="#E2D7C1" stroke-width=".6"/>' +
+      // sprig of greenery tucked under the flap point
+      '<g opacity=".85" transform="translate(' + (EW / 2) + ',' + (FLAP_H - 46) + ')">' +
+        '<path d="M0 0 C0 14 0 26 0 40" stroke="#7C8B72" stroke-width="1.1" fill="none"/>' +
+        '<path d="M0 8 C-9 4 -14 8 -16 14 C-9 16 -3 14 0 8Z" fill="#8E9C83"/>' +
+        '<path d="M0 8 C9 4 14 8 16 14 C9 16 3 14 0 8Z" fill="#75846B"/>' +
+        '<path d="M0 22 C-7 19 -11 22 -13 27 C-7 29 -2 27 0 22Z" fill="#9DAA92"/>' +
+        '<path d="M0 22 C7 19 11 22 13 27 C7 29 2 27 0 22Z" fill="#7C8B72"/>' +
+      '</g>'
+    );
+  }
+
+  /* ==========================================================
+     3 · the curtain sequence
+     ========================================================== */
+  const curtain = $("#curtain"), site = $("#site");
+  let curtainDone = false;
+
+  function paintHero() {
+    const cv = $("#bloomCanvas");
+    if (!cv) return;
+    const w = Math.max(innerWidth, 360), h = Math.max(innerHeight, 480);
+    cv.style.width = w + "px"; cv.style.height = h + "px";
+    bloom(cv, w, h, { seed: 41, pal: PAL.hero, count: 18, blur: Math.max(38, w * 0.05), streaks: 7 });
+  }
+
+  function openEnvelope() {
+    if (curtain.classList.contains("is-opening")) return;
+    curtain.classList.add("is-opening");
+    const wait = REDUCED ? 0 : 620;
+    setTimeout(() => {
+      curtain.classList.add("is-open");
+      $("#hanger").classList.add("is-shown");
+      $("#hanger").removeAttribute("aria-hidden");
+      setTimeout(() => $("#enterCue").classList.add("is-shown"), REDUCED ? 0 : 1200);
+      armEnter();
+    }, wait);
+  }
+
+  function armEnter() {
+    const go = () => enterSite();
+    $("#enterCue").addEventListener("click", go, { once: true });
+    addEventListener("wheel", go, { once: true, passive: true });
+    addEventListener("touchmove", go, { once: true, passive: true });
+    addEventListener("keydown", function k(e) {
+      if (["Enter", " ", "ArrowDown", "PageDown"].includes(e.key)) { removeEventListener("keydown", k); go(); }
+    });
+  }
+
+  function enterSite() {
+    if (curtainDone) return;
+    curtainDone = true;
+    store.set("seen", true);
+    curtain.classList.add("is-gone");
+    document.body.classList.remove("is-locked");
+    site.removeAttribute("aria-hidden");
+    site.classList.add("is-live");
+    setTimeout(() => { curtain.hidden = true; }, 950);
+  }
+
+  function skipCurtain() {
+    curtainDone = true;
+    curtain.hidden = true;
+    curtain.classList.add("is-gone");
+    document.body.classList.remove("is-locked");
+    site.removeAttribute("aria-hidden");
+    site.classList.add("is-live");
+  }
+
+  /* ==========================================================
+     4 · countdown
+     ========================================================== */
+  function tick() {
+    const ms = WEDDING - Date.now();
+    if (ms <= 0) {
+      $("#countdown").innerHTML = '<div style="grid-column:1/-1;text-align:center"><span class="script" style="font-size:clamp(2rem,7vw,3rem);color:var(--sage-deep)">Today is the day</span></div>';
+      return;
+    }
+    const s = Math.floor(ms / 1000);
+    $("#cdD").textContent = Math.floor(s / 86400);
+    $("#cdH").textContent = String(Math.floor(s / 3600) % 24).padStart(2, "0");
+    $("#cdM").textContent = String(Math.floor(s / 60) % 60).padStart(2, "0");
+    $("#cdS").textContent = String(s % 60).padStart(2, "0");
+  }
+
+  /* ==========================================================
+     5 · content
+     ========================================================== */
+  const STORY = [
+    { when: "October 2019", title: "A party neither of us wanted to attend", seed: 11, figures: 2,
+      text: "Beatrice insisted. Margot arrived late and left early; Elias spent forty minutes explaining sourdough to someone who did not ask. They spoke for eleven minutes by the coat rack and both told a friend about it the next morning." },
+    { when: "March 2020", title: "Four hundred days of telephone", seed: 22, figures: 1,
+      text: "Two cities, one pandemic, and a standing 9pm call that neither of them ever cancelled. Elias learned to cook on camera. Margot learned that she does not, in fact, hate the telephone." },
+    { when: "August 2022", title: "The apartment on Ludlow", seed: 33, figures: 2,
+      text: "Four flights up, no lift, and a radiator that knocked like a houseguest. They adopted a bad-tempered grey cat named Pomelo who has never once forgiven them for it." },
+    { when: "September 2025", title: "The wrong turn in Iceland", seed: 44, figures: 2,
+      text: "A gravel road, a rental car with no spare, and six hours waiting for a tow in weather that came sideways. It remains the best day either of them can remember." },
+    { when: "November 2025", title: "The field at Wildmoor", seed: 55, figures: 2,
+      text: "Elias asked in the west meadow in a coat that was far too thin, having rehearsed for a month and forgotten all of it. Margot said yes before he finished. Then they drove to the diner on 9G and ordered pie." }
+  ];
+
+  const PARTY = [
+    { nm: "Beatrice Lang", rl: "Maid of Honour", bio: "Introduced them, and has never let either of them forget it.", seed: 101 },
+    { nm: "Adaeze Okonkwo", rl: "Bridesmaid", bio: "Margot's roommate for four years and her first call for nine.", seed: 102 },
+    { nm: "Winifred Amoah", rl: "Bridesmaid", bio: "Keeper of the group chat and the only reliable weather forecast.", seed: 103 },
+    { nm: "Cora Whitfield", rl: "Bridesmaid", bio: "Margot's cousin, and the reason there will be a fire pit.", seed: 104 },
+    { nm: "Jonah Feld", rl: "Best Man", bio: "Elias's roommate since a very cold sophomore year. Speech pending.", seed: 105 },
+    { nm: "Rafael Vasquez", rl: "Groomsman", bio: "Taught Elias to drive stick. Regrets nothing, apologises to no one.", seed: 106 },
+    { nm: "Sean Callahan", rl: "Groomsman", bio: "Elias's brother-in-law and the household's undefeated card player.", seed: 107 },
+    { nm: "Hugo Bellweather", rl: "Groomsman", bio: "Youngest of the party. In charge of the rings, allegedly.", seed: 108 }
+  ];
+
+  const FAQ = [
+    ["Can I bring a plus-one?", "Your invitation lists exactly how many seats are held in your name — you'll see the number when you open your private invitation or look yourself up on the RSVP page. If it says two and you're coming alone, that's completely fine; just tell us so the kitchen knows."],
+    ["Are children welcome?", "Yes, and several are already invited by name. If your invitation includes your children, they're on the list. If it doesn't and you'd like to bring them, write to us — we'd rather sort it out early than have anyone guessing."],
+    ["What time should I actually arrive?", "Aim for 4:00 pm. The ceremony begins at 4:30 sharp and the meadow is a five-minute walk from the parking field, longer in nice shoes."],
+    ["What does garden formal mean?", "Long dresses or a summer suit. Colour is welcome and so is linen. The ground is grass, so block heels or flats will save your evening."],
+    ["Is there parking, or should I take the shuttle?", "Both exist and both are free. The shuttle runs from the Beekman Arms and Mirbeau from 3:30 pm and returns hourly from 9 pm, with the last one at 12:30 am. Cars may be left overnight in the lower field."],
+    ["What if it rains?", "Everything moves into the hay barn, which is beautiful and dry and already set for it. We'll text every guest by noon that day so nobody is standing in a field wondering."],
+    ["Can I take photographs during the ceremony?", "Please put your phone away for the half hour of the ceremony — we've asked our photographer for the rest. Afterwards, take all the pictures you like and send us the bad ones."],
+    ["When do you need my reply?", "1 April 2027. After that the count goes to the caterer and we lose the ability to work miracles."]
+  ];
+
+  const SEED_WISHES = [
+    { nm: "Beatrice Lang", tx: "I have been taking credit for this since 2019 and I intend to continue. Congratulations, you two." },
+    { nm: "Adaeze & Chidi Okonkwo", tx: "Eight years of Sunday dinners and we still have not run out of things to say. Here's to the next fifty." },
+    { nm: "Marion Whitfield", tx: "Margot, your grandmother would have loved him, and she would have said so loudly and at the wrong moment." },
+    { nm: "Rafael Vasquez", tx: "Elias — you drove that Fiat like a man being chased. Do not do that in Puglia. Congratulations." }
+  ];
+
+  const MEALS = ["Braised short rib", "Roast trout with fennel", "Charred cauliflower (v)", "Child's plate"];
+
+  function renderStory() {
+    const tl = $("#timeline");
+    STORY.forEach(b => {
+      const beat = el("div", "beat");
+      const fig = el("div", "beat-fig");
+      const frame = el("div", "frame");
+      frame.appendChild(makeCanvas(560, 420, (cv, w, h) => portrait(cv, w, h, { seed: b.seed, figures: b.figures, pal: b.seed % 2 ? PAL.orchard : PAL.dusk })));
+      fig.appendChild(frame);
+      const body = el("div", "beat-body",
+        '<span class="beat-when">' + esc(b.when) + '</span>' +
+        '<h3>' + esc(b.title) + '</h3>' +
+        '<p style="color:var(--ink-soft)">' + esc(b.text) + '</p>');
+      beat.append(fig, body);
+      tl.appendChild(beat);
+    });
+  }
+
+  function renderParty() {
+    const g = $("#partyGrid");
+    PARTY.forEach(p => {
+      const n = el("div", "person");
+      const pt = el("div", "portrait");
+      pt.appendChild(makeCanvas(300, 366, (cv, w, h) => portrait(cv, w, h, { seed: p.seed, figures: 1, pal: PAL.linen })));
+      n.appendChild(pt);
+      n.appendChild(el("div", "nm", esc(p.nm)));
+      n.appendChild(el("div", "rl", esc(p.rl)));
+      n.appendChild(el("p", "bio", esc(p.bio)));
+      g.appendChild(n);
+    });
+  }
+
+  const GAL = [
+    { seed: 201, r: 1.28, f: 2, p: "orchard" },  { seed: 202, r: 0.78, d: 1, p: "hero"    },
+    { seed: 203, r: 1.0,  f: 2, p: "linen"   },  { seed: 204, r: 0.82, f: 1, p: "orchard" },
+    { seed: 205, r: 1.42, d: 1, p: "orchard" },  { seed: 206, r: 0.76, f: 2, p: "linen"   },
+    { seed: 207, r: 1.1,  f: 1, p: "dusk"    },  { seed: 208, r: 0.86, d: 1, p: "linen"   },
+    { seed: 209, r: 1.34, f: 2, p: "linen"   },  { seed: 210, r: 0.8,  f: 1, p: "orchard" },
+    { seed: 211, r: 1.0,  d: 1, p: "dusk"    },  { seed: 212, r: 1.2,  f: 2, p: "hero"    }
+  ];
+
+  /* one image, drawn either as a figure or as an out-of-focus detail */
+  function galleryArt(cv, w, h, it) {
+    if (it.d) bloom(cv, w, h, { seed: it.seed, pal: PAL[it.p], count: 11, blur: Math.max(16, w * .07), streaks: 3 });
+    else portrait(cv, w, h, { seed: it.seed, figures: it.f, pal: PAL[it.p] });
+  }
+
+  function renderGallery() {
+    const g = $("#galleryGrid");
+    GAL.forEach((it, i) => {
+      const b = el("button", "gal-item");
+      b.type = "button";
+      b.setAttribute("aria-label", "Open photograph " + (i + 1) + " of " + GAL.length);
+      b.dataset.i = i;
+      const W = 520, H = Math.round(W / it.r);
+      b.appendChild(makeCanvas(W, H, (cv, w, h) => galleryArt(cv, w, h, it)));
+      b.addEventListener("click", () => openLightbox(i));
+      g.appendChild(b);
+    });
+  }
+
+  function renderFaq() {
+    const f = $("#faqList");
+    FAQ.forEach(([q, a]) => {
+      f.insertAdjacentHTML("beforeend",
+        "<details><summary>" + esc(q) + '<span class="plus" aria-hidden="true"></span></summary>' +
+        '<div class="ans">' + esc(a) + "</div></details>");
+    });
+  }
+
+  function renderWishes() {
+    const list = $("#wishList");
+    list.innerHTML = "";
+    const all = SEED_WISHES.concat(store.get("wishes", []));
+    all.slice().reverse().forEach(w => {
+      list.insertAdjacentHTML("beforeend",
+        '<blockquote class="paper wish"><span class="qm" aria-hidden="true">&ldquo;</span>' +
+        "<p>" + esc(w.tx) + "</p>" +
+        '<div class="from">' + esc(w.nm) + "</div></blockquote>");
+    });
+  }
+
+  /* stylised map — a drawn one beats a dead iframe */
+  function renderMap() {
+    $("#mapHolder").innerHTML =
+      '<svg viewBox="0 0 700 300" style="width:100%;height:auto;display:block" role="img" aria-label="Map: Wildmoor Farm sits east of Rhinebeck village off Route 308">' +
+      '<rect width="700" height="300" fill="#F4EFE4"/>' +
+      '<g opacity=".5"><path d="M-20 250 C120 236 210 268 320 244 C430 220 520 250 720 226" stroke="#AFC0C4" stroke-width="16" fill="none" stroke-linecap="round"/></g>' +
+      '<text x="46" y="272" font-family="EB Garamond, serif" font-size="12" fill="#7C8CA0" font-style="italic">Hudson River</text>' +
+      '<g fill="#DDE3D4" opacity=".85">' +
+        '<path d="M400 40 C470 26 560 44 590 82 C620 120 594 158 528 168 C462 178 402 152 392 110 C384 74 386 44 400 40Z"/>' +
+        '<path d="M60 60 C120 44 190 62 200 96 C210 130 160 152 108 146 C56 140 32 106 42 82Z"/>' +
+      '</g>' +
+      '<g stroke="#D7CBB4" stroke-width="9" fill="none" stroke-linecap="round">' +
+        '<path d="M0 168 L700 132"/><path d="M236 0 L268 300"/>' +
+      '</g>' +
+      '<g stroke="#C9B792" stroke-width="4.5" fill="none" stroke-linecap="round"><path d="M252 148 C330 142 400 128 486 108"/></g>' +
+      '<text x="120" y="150" font-family="Jost, sans-serif" font-size="10" letter-spacing="2.4" fill="#847A6B">ROUTE 9G</text>' +
+      '<text x="330" y="126" font-family="Jost, sans-serif" font-size="10" letter-spacing="2.4" fill="#847A6B">ROUTE 308</text>' +
+      '<circle cx="238" cy="152" r="4.5" fill="#A99B88"/>' +
+      '<text x="176" y="182" font-family="Cormorant Garamond, serif" font-size="15" letter-spacing="2" fill="#4A443B">RHINEBECK</text>' +
+      '<g transform="translate(500,100)">' +
+        '<path d="M0 0 C13 0 22 9 22 21 C22 34 6 48 0 56 C-6 48 -22 34 -22 21 C-22 9 -13 0 0 0Z" transform="translate(0,-56)" fill="#48543F"/>' +
+        '<circle cx="0" cy="-35" r="7" fill="#F4EFE4"/>' +
+        '<text x="0" y="24" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" letter-spacing="2" fill="#24211C">WILDMOOR FARM</text>' +
+        '<text x="0" y="42" text-anchor="middle" font-family="Jost, sans-serif" font-size="9.5" letter-spacing="2" fill="#847A6B">118 SAWKILL ROAD</text>' +
+      '</g>' +
+      '<g transform="translate(646,44)" opacity=".7">' +
+        '<path d="M0 -18 L5 0 L0 14 L-5 0 Z" fill="#B08D57"/>' +
+        '<text x="0" y="28" text-anchor="middle" font-family="Jost, sans-serif" font-size="9" letter-spacing="2" fill="#847A6B">N</text>' +
+      '</g></svg>';
+  }
+
+  /* ==========================================================
+     6 · lightbox
+     ========================================================== */
+  let lbIndex = 0;
+  function openLightbox(i) {
+    lbIndex = (i + GAL.length) % GAL.length;
+    const it = GAL[lbIndex];
+    const stage = $("#lbStage");
+    stage.innerHTML = "";
+    const W = 900, H = Math.round(W / it.r);
+    const cv = document.createElement("canvas");
+    galleryArt(cv, W, H, it);
+    cv.style.width = "auto";
+    stage.appendChild(cv);
+    $("#lightbox").classList.add("is-open");
+    document.body.classList.add("is-locked");
+    $("#lbClose").focus();
+  }
+  function closeLightbox() {
+    $("#lightbox").classList.remove("is-open");
+    if (!$("#gate").classList.contains("is-open")) document.body.classList.remove("is-locked");
+  }
+
+  /* ==========================================================
+     7 · the vault — token / name / passphrase unlocking
+     ========================================================== */
+  const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const hex = u => Array.from(u, b => b.toString(16).padStart(2, "0")).join("");
+  const SALT = b64(VAULT.s);
+  const unlockCache = new Map();
+
+  async function unlock(secret) {
+    if (!secret) return null;
+    if (unlockCache.has(secret)) return unlockCache.get(secret);
+    if (!(window.crypto && crypto.subtle)) return null;
+    let out = null;
+    try {
+      const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), "PBKDF2", false, ["deriveBits"]);
+      const bits = new Uint8Array(await crypto.subtle.deriveBits(
+        { name: "PBKDF2", salt: SALT, iterations: VAULT.i, hash: "SHA-256" }, base, 512));
+      const hint = hex(bits.slice(32, 40));
+      const rec = VAULT.r.find(r => r.h === hint);
+      if (rec) {
+        const key = await crypto.subtle.importKey("raw", bits.slice(0, 32), "AES-GCM", false, ["decrypt"]);
+        const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(rec.v) }, key, b64(rec.d));
+        out = JSON.parse(new TextDecoder().decode(pt));
+      }
+    } catch (e) { out = null; }
+    unlockCache.set(secret, out);
+    return out;
+  }
+
+  /* a guest may type a link token, or their own name */
+  async function resolveGuest(input) {
+    const raw = input.trim();
+    if (!raw) return null;
+    return (await unlock(raw)) || (await unlock(norm(raw)));
+  }
+
+  /* ==========================================================
+     8 · the gate
+     ========================================================== */
+  const gate = $("#gate"), gatePanel = $("#gatePanel");
+  let gatePainted = false;
+
+  function openGate() {
+    gate.classList.add("is-open");
+    document.body.classList.add("is-locked");
+    if (!gatePainted) {
+      const cv = $("#gateCanvas");
+      const w = Math.max(innerWidth, 360), h = Math.max(innerHeight, 520);
+      cv.style.width = w + "px"; cv.style.height = h + "px";
+      bloom(cv, w, h, { seed: 88, pal: PAL.dusk, count: 15, blur: Math.max(40, w * .05), streaks: 6 });
+      gatePainted = true;
+    }
+  }
+  function closeGate() {
+    gate.classList.remove("is-open");
+    if (!$("#lightbox").classList.contains("is-open")) document.body.classList.remove("is-locked");
+  }
+
+  const gateLoading = msg =>
+    '<div class="gate-panel"><div class="spinner" role="status"></div>' +
+    '<p class="label" style="margin-top:1.2rem">' + esc(msg) + "</p></div>";
+
+  function inviteHTML(g) {
+    const seatWord = g.seats === 1 ? "one seat is held" : g.seats + " seats are held";
+    return '<div class="invite-wrap"><div class="invite-card">' +
+      '<span class="label label--sage">Together with their families</span>' +
+      '<span class="household">' + esc(g.name) + "</span>" +
+      '<p class="formal">You are warmly invited to the marriage of</p>' +
+      '<div class="bignames">Margot Elise Vandenberg<span class="amp">&amp;</span>Elias Thorne Marchetti</div>' +
+      '<div class="rule-orn" style="width:min(220px,80%)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1c1.6 2.4 4 3.8 6.6 4C12 6 9.6 8 8 15 6.4 8 4 6 1.4 5 4 4.8 6.4 3.4 8 1Z" fill="currentColor" opacity=".8"/></svg></div>' +
+      '<div class="whenwhere">Saturday, the twelfth of June<br>Two thousand twenty-seven<br>at half past four in the afternoon</div>' +
+      '<p class="formal" style="line-height:1.7">Wildmoor Farm<br>118 Sawkill Road, Rhinebeck, New York<br><span style="font-style:italic">Dinner and dancing to follow</span></p>' +
+      (g.note ? '<p class="personal">' + esc(g.note) + "</p>" : "") +
+      '<p class="seat-line">' + esc(seatWord) + " in your name" + (g.plusOne ? " · a guest is welcome" : "") + "</p>" +
+      "</div>" +
+      '<svg class="seal" viewBox="0 0 60 60" aria-hidden="true">' +
+      '<defs><radialGradient id="waxg2" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#6D7C63"/><stop offset=".62" stop-color="#4E5B45"/><stop offset="1" stop-color="#333D2C"/></radialGradient></defs>' +
+      '<path d="M30 1.5 C40.5 1.2 49 7.4 53 16.6 C57 25.8 58.4 33 54.8 41.6 C51.2 50.2 43.6 57.2 33.4 58.4 C23.2 59.6 13.4 56 7.4 48.2 C1.4 40.4 .6 29.8 3.8 20 C7 10.2 19.5 1.8 30 1.5 Z" fill="url(#waxg2)"/>' +
+      '<text x="30" y="36" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="19" letter-spacing="1.5" fill="#C6CDBB" opacity=".92">ME</text>' +
+      "</svg></div>" +
+      '<div style="display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2.8rem">' +
+      '<button class="btn" type="button" data-act="rsvp">Reply to this invitation</button>' +
+      '<button class="btn btn--ghost" type="button" data-act="site">See the full site</button>' +
+      "</div>";
+  }
+
+  function notFoundHTML() {
+    return '<div class="paper" style="text-align:center;padding:clamp(2rem,6vw,3rem)">' +
+      '<span class="label label--sage">We couldn\'t open this one</span>' +
+      '<h2 style="margin:.8rem 0 .9rem;font-size:clamp(1.6rem,4.5vw,2.1rem)">This invitation link isn\'t recognised</h2>' +
+      '<p style="color:var(--ink-soft);max-width:44ch;margin-inline:auto">Links are long and easy to break in a text message. Check that you copied the whole thing, including the characters after the last slash.</p>' +
+      '<div class="rule-orn" style="width:min(200px,70%);margin:1.6rem auto"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.4" fill="currentColor"/></svg></div>' +
+      '<p style="color:var(--ink-soft);max-width:44ch;margin-inline:auto">If you have the passphrase from the couple, you can use that instead. Otherwise write to ' +
+      '<a href="mailto:hello@example.com" style="border-bottom:1px solid var(--rule-gold);text-decoration:none">hello@example.com</a> and we will send you a fresh link.</p>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:1.8rem">' +
+      '<button class="btn" type="button" data-act="pin">Enter a passphrase</button>' +
+      '<button class="btn btn--ghost" type="button" data-act="site">Back to the site</button></div></div>';
+  }
+
+  function pinHTML(err) {
+    return '<div class="paper" style="text-align:center;padding:clamp(2rem,6vw,3rem)">' +
+      '<span class="label label--sage">No link? No trouble</span>' +
+      '<h2 style="margin:.8rem 0 .6rem;font-size:clamp(1.6rem,4.5vw,2.1rem)">Enter the passphrase</h2>' +
+      '<p style="color:var(--ink-soft);max-width:40ch;margin-inline:auto">The couple included it at the bottom of the paper invitation.</p>' +
+      '<form class="pin-form" id="pinForm">' +
+      '<input type="text" id="pinInput" placeholder="passphrase" autocomplete="off" spellcheck="false" aria-label="Passphrase">' +
+      (err ? '<p class="err">' + esc(err) + "</p>" : "") +
+      '<button class="btn" type="submit">Unlock the invitation</button>' +
+      '<button class="btn btn--ghost btn--tiny" type="button" data-act="site">Back to the site</button>' +
+      "</form></div>";
+  }
+
+  async function showInvite(secret) {
+    openGate();
+    gatePanel.innerHTML = gateLoading("Opening your invitation");
+    const g = await unlock(secret);
+    if (g && (g.kind === "household" || g.kind === "passphrase")) {
+      currentGuest = g;
+      gatePanel.innerHTML = inviteHTML(g);
+    } else {
+      gatePanel.innerHTML = notFoundHTML();
+    }
+  }
+
+  gatePanel.addEventListener("click", async e => {
+    const b = e.target.closest("[data-act]");
+    if (!b) return;
+    const act = b.dataset.act;
+    if (act === "site") { location.hash = "#top"; closeGate(); }
+    if (act === "pin") { gatePanel.innerHTML = pinHTML(); $("#pinInput").focus(); }
+    if (act === "rsvp") {
+      closeGate();
+      location.hash = "#rsvp";
+      if (currentGuest) startRsvp(currentGuest);
+    }
+  });
+
+  gatePanel.addEventListener("submit", async e => {
+    if (e.target.id !== "pinForm") return;
+    e.preventDefault();
+    const v = $("#pinInput").value;
+    gatePanel.innerHTML = gateLoading("Checking");
+    const g = await unlock(norm(v));
+    if (g && g.kind === "admin") { renderAdmin(g.links); return; }
+    if (g) { currentGuest = g; gatePanel.innerHTML = inviteHTML(g); }
+    else { gatePanel.innerHTML = pinHTML("That passphrase doesn't match. Check for a typo, or ask the couple."); $("#pinInput").focus(); }
+  });
+
+  /* ==========================================================
+     9 · admin — generate and export the guest links
+     ========================================================== */
+  function inviteUrl(tok) {
+    return location.origin + location.pathname + "#/invite/" + tok;
+  }
+
+  function csvFrom(rows) {
+    const q = v => '"' + String(v).replace(/"/g, '""') + '"';
+    return rows.map(r => r.map(q).join(",")).join("\r\n");
+  }
+
+  async function offerFile(filename, text) {
+    let dl = null;
+    try { dl = window.claude && claude.use ? await claude.use("downloads") : null; } catch (e) { dl = null; }
+    if (dl) {
+      try { await dl.save({ filename: filename, data: text }); toast("Saved " + filename); return; }
+      catch (e) { /* declined or unavailable — fall through */ }
+    }
+    const ta = $("#csvOut");
+    if (ta) { ta.hidden = false; ta.value = text; ta.select(); toast("Copy the text below"); }
+  }
+
+  function renderAdmin(links) {
+    const rows = links.map(l =>
+      "<tr><td>" + esc(l.household) + '</td><td class="tnum">' + l.seats +
+      '</td><td class="lnk">' + esc(inviteUrl(l.token)) +
+      '</td><td><button class="btn btn--ghost btn--tiny" type="button" data-copy="' + esc(inviteUrl(l.token)) + '">Copy</button></td></tr>').join("");
+
+    const replies = store.get("rsvps", {});
+    const rkeys = Object.keys(replies);
+    const attending = rkeys.reduce((n, k) => n + replies[k].guests.filter(g => g.attending).length, 0);
+
+    gatePanel.innerHTML =
+      '<div class="paper" style="text-align:left;padding:clamp(1.4rem,4vw,2.2rem);max-width:none">' +
+      '<div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:flex-end">' +
+        '<div><span class="label label--sage">Couple\'s tools</span><h2 style="margin-top:.5rem;font-size:clamp(1.5rem,4vw,2rem)">Guest links</h2></div>' +
+        '<div style="display:flex;gap:.6rem;flex-wrap:wrap">' +
+          '<button class="btn btn--ghost btn--tiny" type="button" id="expLinks">Export links CSV</button>' +
+          '<button class="btn btn--ghost btn--tiny" type="button" id="expRsvp">Export replies CSV</button>' +
+          '<button class="btn btn--ghost btn--tiny" type="button" data-act="site">Close</button>' +
+        "</div></div>" +
+      '<p class="note" style="margin-top:1rem;max-width:64ch">One private link per household. Send it by text or email — anyone with the link sees that household\'s invitation and nothing else. ' +
+      "<strong>" + rkeys.length + "</strong> household" + (rkeys.length === 1 ? "" : "s") + " have replied so far, totalling <strong>" + attending + "</strong> attending.</p>" +
+      '<div class="scroll-x"><table class="admin-table"><thead><tr><th>Household</th><th>Seats</th><th>Private link</th><th></th></tr></thead><tbody>' + rows + "</tbody></table></div>" +
+      '<textarea id="csvOut" hidden style="margin-top:1rem;min-height:150px;font-family:ui-monospace,monospace;font-size:.75rem" readonly aria-label="CSV output"></textarea>' +
+      "</div>";
+
+    $("#expLinks").addEventListener("click", () => {
+      offerFile("wildmoor-guest-links.csv",
+        csvFrom([["Household", "Seats", "Private link"]].concat(links.map(l => [l.household, l.seats, inviteUrl(l.token)]))));
+    });
+    $("#expRsvp").addEventListener("click", () => {
+      const out = [["Household", "Guest", "Attending", "Meal", "Dietary", "Email", "Note", "Replied"]];
+      Object.keys(replies).forEach(k => {
+        const r = replies[k];
+        r.guests.forEach(g => out.push([k, g.name, g.attending ? "Yes" : "No", g.meal || "", g.diet || "", r.email || "", r.note || "", r.at]));
+      });
+      if (out.length === 1) { toast("No replies yet"); return; }
+      offerFile("wildmoor-replies.csv", csvFrom(out));
+    });
+    gatePanel.addEventListener("click", e => {
+      const c = e.target.closest("[data-copy]");
+      if (!c) return;
+      navigator.clipboard && navigator.clipboard.writeText(c.dataset.copy)
+        .then(() => toast("Link copied")).catch(() => toast("Select and copy manually"));
+    });
+  }
+
+  /* ==========================================================
+     10 · RSVP
+     ========================================================== */
+  let currentGuest = null;
+
+  function startRsvp(g) {
+    currentGuest = g;
+    $("#rsvpLookup").hidden = true;
+    $("#rsvpDone").hidden = true;
+    $("#rsvpForm").hidden = false;
+    $("#rsvpHousehold").textContent = g.name;
+    $("#rsvpSeats").textContent =
+      (g.seats === 1 ? "One seat held" : g.seats + " seats held") + (g.plusOne ? " · a guest is welcome" : "");
+
+    const prev = store.get("rsvps", {})[g.name];
+    const rows = $("#guestRows");
+    rows.innerHTML = "";
+    const members = (g.members && g.members.length) ? g.members.slice(0, g.seats) : Array.from({ length: g.seats }, (_, i) => "Guest " + (i + 1));
+
+    members.forEach((m, i) => {
+      const isOpen = /^Guest of |^Guest \d|^Your guest$/i.test(m);
+      const p = prev && prev.guests[i];
+      const row = el("div", "guest-row");
+      row.innerHTML =
+        '<div><div class="who">' + esc(isOpen ? "Additional guest" : m) + "</div>" +
+        (isOpen
+          ? '<div class="field" style="margin:.5rem 0 0"><label for="gn' + i + '">Their name</label><input type="text" id="gn' + i + '" value="' + esc(p && p.name && !/^Guest/i.test(p.name) ? p.name : "") + '" placeholder="Leave blank if coming alone"></div>'
+          : '<input type="hidden" id="gn' + i + '" value="' + esc(m) + '">') +
+        '<div class="choice-row" style="margin-top:.7rem">' +
+          '<label class="choice"><input type="radio" name="att' + i + '" value="1"' + (p && p.attending ? " checked" : "") + '><span>Joyfully accepts</span></label>' +
+          '<label class="choice"><input type="radio" name="att' + i + '" value="0"' + (p && p.attending === false ? " checked" : "") + '><span>Regretfully declines</span></label>' +
+        "</div></div>" +
+        '<div><div class="field"><label for="ml' + i + '">Meal</label><select id="ml' + i + '">' +
+          '<option value="">Select a meal</option>' +
+          MEALS.map(x => '<option' + (p && p.meal === x ? " selected" : "") + ">" + esc(x) + "</option>").join("") +
+        "</select></div>" +
+        '<div class="field" style="margin-bottom:0"><label for="dt' + i + '">Allergies or dietary needs</label>' +
+        '<input type="text" id="dt' + i + '" value="' + esc(p && p.diet ? p.diet : "") + '" placeholder="None"></div></div>';
+      rows.appendChild(row);
+    });
+
+    if (prev) {
+      $("#rsvpEmail").value = prev.email || "";
+      $("#rsvpNote").value = prev.note || "";
+    }
+    $("#rsvpShell").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+  }
+
+  function resetRsvp() {
+    currentGuest = null;
+    $("#rsvpForm").hidden = true;
+    $("#rsvpDone").hidden = true;
+    $("#rsvpLookup").hidden = false;
+    $("#lookupName").value = "";
+    $("#lookupErr").hidden = true;
+  }
+
+  async function doLookup() {
+    const btn = $("#lookupBtn"), errEl = $("#lookupErr");
+    const v = $("#lookupName").value;
+    if (!v.trim()) { errEl.textContent = "Type your name or your invitation code first."; errEl.hidden = false; return; }
+    errEl.hidden = true;
+    btn.disabled = true; btn.textContent = "Looking…";
+    const g = await resolveGuest(v);
+    btn.disabled = false; btn.textContent = "Find my invitation";
+    if (g && (g.kind === "household" || g.kind === "passphrase")) { startRsvp(g); return; }
+    if (g && g.kind === "admin") { openGate(); renderAdmin(g.links); return; }
+    errEl.innerHTML = "We couldn't find that name on the list. Try the exact spelling on your invitation, or " +
+      '<button type="button" class="pinLink" style="border-bottom:1px solid var(--rule-gold)">use your private link instead</button>.';
+    errEl.hidden = false;
+  }
+
+  function submitRsvp(e) {
+    e.preventDefault();
+    if (!currentGuest) return;
+    const g = currentGuest;
+    const members = (g.members && g.members.length) ? g.members.slice(0, g.seats) : Array.from({ length: g.seats }, (_, i) => "Guest " + (i + 1));
+    const guests = [];
+    let missing = false, yes = 0;
+
+    members.forEach((m, i) => {
+      const picked = document.querySelector('input[name="att' + i + '"]:checked');
+      const nameEl = $("#gn" + i);
+      const nm = (nameEl && nameEl.value.trim()) || m;
+      const isOpen = /^Guest of |^Guest \d|^Your guest$/i.test(m);
+      if (!picked) { if (!(isOpen && !(nameEl && nameEl.value.trim()))) missing = true; return; }
+      const attending = picked.value === "1";
+      if (attending) yes++;
+      guests.push({ name: nm, attending: attending, meal: attending ? $("#ml" + i).value : "", diet: attending ? $("#dt" + i).value.trim() : "" });
+    });
+
+    const err = $("#rsvpErr");
+    if (missing || !guests.length) {
+      err.textContent = "Choose accepts or declines for each person before sending.";
+      err.hidden = false; return;
+    }
+    err.hidden = true;
+
+    const all = store.get("rsvps", {});
+    all[g.name] = { guests: guests, email: $("#rsvpEmail").value.trim(), note: $("#rsvpNote").value.trim(), at: new Date().toISOString() };
+    store.set("rsvps", all);
+
+    $("#rsvpForm").hidden = true;
+    $("#rsvpDone").hidden = false;
+    $("#rsvpDoneMsg").textContent = yes === 0
+      ? "We're sorry to miss you — but we're glad you told us. There will be cake in your honour regardless."
+      : (yes === 1 ? "One seat is spoken for." : yes + " seats are spoken for.") + " We cannot wait to see you in the meadow.";
+    $("#rsvpShell").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+  }
+
+  /* ==========================================================
+     11 · wiring
+     ========================================================== */
+  function router() {
+    const h = location.hash;
+    if (h.indexOf("#/invite/") === 0) { if (!curtainDone) skipCurtain(); showInvite(h.slice(9)); return; }
+    if (h === "#/enter") { if (!curtainDone) skipCurtain(); openGate(); gatePanel.innerHTML = pinHTML(); const i = $("#pinInput"); i && i.focus(); return; }
+    closeGate();
+  }
+
+  function init() {
+    buildEnvelope();
+    paintHero();
+    portrait($("#medallionCanvas"), 240, 308, { seed: 900, figures: 2, pal: PAL.orchard });
+
+    renderStory(); renderParty(); renderGallery(); renderFaq(); renderWishes(); renderMap();
+    tick(); setInterval(tick, 1000);
+
+    // curtain
+    const startedGated = location.hash.indexOf("#/") === 0;
+    if (startedGated || store.get("seen", false)) skipCurtain();
+    else document.body.classList.add("is-locked");
+
+    $("#envelopeBtn").addEventListener("click", openEnvelope);
+    $("#skipBtn").addEventListener("click", enterSite);
+
+    // nav
+    const drawer = $("#drawer"), navToggle = $("#navToggle");
+    navToggle.addEventListener("click", () => {
+      const open = drawer.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+    $$("#drawer a").forEach(a => a.addEventListener("click", () => {
+      drawer.classList.remove("is-open"); navToggle.setAttribute("aria-expanded", "false");
+    }));
+
+    // scroll reveal
+    if ("IntersectionObserver" in window && !REDUCED) {
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      }), { rootMargin: "0px 0px -8% 0px", threshold: .06 });
+      $$(".rise").forEach(n => io.observe(n));
+    } else {
+      $$(".rise").forEach(n => n.classList.add("is-in"));
+    }
+
+    // section highlighting
+    const links = $$("#navDesktop a[href^='#']");
+    if ("IntersectionObserver" in window) {
+      const so = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(a => a.classList.toggle("is-here", a.getAttribute("href") === "#" + e.target.id));
+      }), { rootMargin: "-45% 0px -50% 0px" });
+      $$("#site section[id]").forEach(s => so.observe(s));
+    }
+
+    // gate + pin entry points
+    document.addEventListener("click", e => {
+      const p = e.target.closest(".pinLink");
+      if (p) { e.preventDefault(); openGate(); gatePanel.innerHTML = pinHTML(); const i = $("#pinInput"); i && i.focus(); }
+    });
+    $("#gateBack").addEventListener("click", () => { closeGate(); if (location.hash.indexOf("#/") === 0) location.hash = "#top"; });
+    $("#adminLink").addEventListener("click", () => { openGate(); gatePanel.innerHTML = pinHTML(); $("#pinInput").placeholder = "couple's passphrase"; $("#pinInput").focus(); });
+
+    // rsvp
+    $("#lookupBtn").addEventListener("click", doLookup);
+    $("#lookupName").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); doLookup(); } });
+    $("#rsvpForm").addEventListener("submit", submitRsvp);
+    $("#rsvpBack").addEventListener("click", resetRsvp);
+    $("#rsvpAnother").addEventListener("click", resetRsvp);
+
+    // guestbook
+    $("#wishForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const nm = $("#wishName").value.trim(), tx = $("#wishText").value.trim(), err = $("#wishErr");
+      if (!nm || !tx) { err.textContent = "We need both a name and a message to sign the book."; err.hidden = false; return; }
+      err.hidden = true;
+      const ws = store.get("wishes", []);
+      ws.push({ nm: nm, tx: tx });
+      store.set("wishes", ws);
+      $("#wishName").value = ""; $("#wishText").value = "";
+      renderWishes();
+      toast("Signed — thank you");
+      $("#wishList").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+    });
+
+    // lightbox
+    $("#lbClose").addEventListener("click", closeLightbox);
+    $("#lbPrev").addEventListener("click", () => openLightbox(lbIndex - 1));
+    $("#lbNext").addEventListener("click", () => openLightbox(lbIndex + 1));
+    $("#lightbox").addEventListener("click", e => { if (e.target.id === "lightbox") closeLightbox(); });
+    addEventListener("keydown", e => {
+      if (!$("#lightbox").classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") openLightbox(lbIndex - 1);
+      if (e.key === "ArrowRight") openLightbox(lbIndex + 1);
+    });
+    addEventListener("keydown", e => {
+      if (e.key === "Escape" && gate.classList.contains("is-open")) {
+        closeGate(); if (location.hash.indexOf("#/") === 0) location.hash = "#top";
+      }
+    });
+
+    addEventListener("hashchange", router);
+    router();
+
+    let rt;
+    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { if (!curtainDone) paintHero(); }, 260); });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
